@@ -38,6 +38,7 @@
 ### 代码框架
 
 <img src="image/pic4.png"/>
+
 **Android代码采用主流MVP架构**
 
         **Views：** 所有界面类，包括登录、主界面、直播界面以及一些自定义控件。
@@ -81,27 +82,33 @@ AVSDK回调 ：直播中成员音视频状态变化
 1. **主播角色** 权限全开 低延时 高分辨率
 
 <img src="image/pic6.png"/>
+
 1. **普通成员角色** 高延时 只有接受的权限没有发送权限
 
 
 
 <img src="image/pic7.png"/>
+
 1. **互动观众角色** 低延时 低分辨率
 
 <img src="image/pic8.png"/>
+
 进入房间可以预设自己的角色
 
 <img src="image/pic9.png"/>
+
 在直播过程中也可以动态调整自己的角色 参考LiveHelper的方法 changeRole
 
 权限 是指的成员的上下行权限，有9种权限。默认权限是全开权限
 
 <img src="image/pic10.png"/>
+
 进入房间可以设置自己的进房间权限参考上图，在直播过程中也可以动态改变权限 参考LiveHelper中的方法changeAuthority
 
 ## 主播创建房间流程
 
 <img src="image/pic11.png"/>
+
 1. a)直播房间是由聊天室（AVChatRoom）和音视频房间（AVROOm）共同构成，创建一个直播就是创建一个聊天室，加入一个音视频房间。音视频房间没有创建的概念。
 2. b)必须的进入房间之后才能初始化界面（initAvUILayer），初始化完了之后才能打开摄像头(openCameraAndMic)。
 3. c)主播渲染，无需向AV后台请求自己画面，设置自己ID( setSelfId )，本地渲染(setLocalHasVideo)即可。设置ID和本地渲染也不能逆序。
@@ -111,20 +118,25 @@ AVSDK回调 ：直播中成员音视频状态变化
 录制在客户端就是发起一个请求而已。SDK会自动上传音视频流
 
 <img src="image/pic12.png"/>
+
 接口示例
 
 <img src="image/pic13.png"/>
+
 旁路推流类似录制，客户端只需发起一个请求而已
 
 <img src="image/pic14.png"/>
+
 接口示例
 
 <img src="image/pic15.png"/>
+
 关于录制和旁路推流的更多内容请关注腾讯云上面的文档
 
 ## 观众加入房间
 
 <img src="image/pic16.png"/>
+
 1. a)加入聊天室，进入音视频房间
 2. b)加入房间初始，通过监听OnSemiAutoRecvCameraVideo来判断已经加入房间互动观众，直接渲染互动观众画面的，无需请求，这个步骤是优化进入房间速度的。进入房间后直播过程中如果成员状态变化，通过onEndpointsUpdateInfo需要请求对方画面，再渲染。
 3. c)如果摄像头变化的是自己，直接本地渲染就可以了，无需请求。
@@ -142,12 +154,15 @@ AVSDK回调 ：直播中成员音视频状态变化
 C2C消息
 
 <img src="image/pic17.png"/>
+
 群消息
 
 <img src="image/pic18.png"/>
+
 ## 连麦互动
 
 <img src="image/pic19.png"/>
+
 1. a)信令请求和应答是通过IMSDK的C2C消息。应答信令消息之后是打开或者关闭自己摄像头。
 2. b)直播过程中成员音视频状态发送改变会通过onEndpointsUpdateInfo回调传递给所有成员。根据Id去请求对方画面，这种请求是AVSDK的接口不再是C2C消息。请求成功渲染画面。
 3. c)成员状态变化回调onEndpointsUpdateInfo回调会包括自己，所以无论视频互动成员还是普通成员只需要根据回调里面的ID去请求画面即可同步，保持一致。
@@ -171,6 +186,7 @@ C2C消息
  2 退出IM房间
 
 <img src="image/pic20.png"/>
+
 ## 开发中注意的点
 
 ### 权限检查
@@ -210,6 +226,7 @@ IMSDK和AVSDK  /sdcard/tencent/imsdklogs/包名/
    随心播在这里创建了一个缓冲链表mTmpChatList用来缓冲数据，当有新消息需要更新时，由notifyRefreshListView处理，流程如下:
 
   <img src="image/pic21.png"/>
+  
 ### 渐隐动画
 
    随心播聊天室的消息渐隐动画，作为一个个性化功能的示例，该功能可在设置菜单中开启(鉴于对性能的损耗，一般不推荐使用)。
