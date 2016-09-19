@@ -8,12 +8,12 @@
 通常的原因有如下几点：<br>
 1. 代码中有循环引用：<font color="red">**通常表现在block使用不当，或计时器处理不当，以及其他常见的内存引用问题，导致没有释放或延迟释放；**</font><br>
 2. 切换前后台处理不当：直播过程中的前后台切换（尤其是频繁切换时），以及对电话的处理不当，导致AVGLBaseView startDisplay或stopDisplay的时机不对，其本质上还是第一条，下面会解释；<br>
-3. 调试过程中AVSDK太久没上传心跳（>30s），直播过程中被动退出了，然后下次再进的时候也有会导致crash，本质上也属于每一条。通常这种情况下，建议检查AVSDK相关的回调中是否处理得当，此处不多介绍；<br>
+3. 调试过程中AVSDK太久没上传心跳（>30s），直播过程中被动退出了，然后下次再进的时候也有会导致crash，本质上也属于第一条。通常这种情况下，建议检查AVSDK相关的回调中是否处理得当，此处不多介绍；<br>
 
 真实原因是：
 AVGLBaseView底层渲染是通过CADisplayLink（相当于计时器，计时器本身对使用target造成一次循环引用），当我们开始startDisplay时，实际上是循环进行绘制AVSDK返回的QAVFrameData到display屏幕上，display中会间接调用上面说的AVGLRenderView的drawTexture方法<br>
 <img src="media/image109.png" width="640"/>
-<br>所以在不需要渲染的时候，需要停止到该计时器<br>
+<br>所以在不需要渲染的时候，需要停止该计时器<br>
 <img src="media/image110.png" width="640"/>
 
 <font color="red">**因为其底层使用的AVGLShareInstance是一个单例，如果在下一次initOpenGL后，这时上一次的延迟释放了，其会调用destoryOpenGL，导致在display的时候crash。**</font>
