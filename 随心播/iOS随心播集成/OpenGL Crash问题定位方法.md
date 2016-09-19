@@ -82,7 +82,6 @@ AVGLBaseView底层渲染是通过CADisplayLink（相当于计时器，计时器�
 > 
 > - (void)onSendMessageSucc:(BOOL)succ
 > {
-> 		// 下面的代码都有问题
 > 		_mA = 10;							
 > 		_md = [[NSObject alloc] init]
 > 		self.mc = [[NSObject alloc] init];
