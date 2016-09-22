@@ -1,5 +1,4 @@
 # 原因分析
-
 当使用AVSDK中默认的AVGLBaseView作为直播渲染时，从之前调试以及用户反馈的情况来看，通常导致crash的地方是：<font color="red">**OpenGL在上一次没有正确得到释放，下一次使用过程中crash了;**</font><br>，其表象是crash到AVGLRenderView中的drawTexture下图中标线处，报野指针错误:<br>
 <img src="media/image111.png"/>
 
@@ -82,7 +81,6 @@ AVGLBaseView底层渲染是通过CADisplayLink（相当于计时器，计时器�
 > 
 > - (void)onSendMessageSucc:(BOOL)succ
 > {
-> 		// 下面的代码都有问题
 > 		_mA = 10;							
 > 		_md = [[NSObject alloc] init]
 > 		self.mc = [[NSObject alloc] init];

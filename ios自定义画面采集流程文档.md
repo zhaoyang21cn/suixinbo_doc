@@ -28,7 +28,7 @@
 `videoCtrl`是`QAVVideoCtrl`对象的实例，`frame`是采集后处理过的数据转换成的`QAVVideoFrame`对象，`result`为`QAV_OK`，说明成功传入AVSDK，否则失败，需要检查前面的流程是否都正确了。
 
 ## 远端渲染 ##
-AVSDK的回调接口
+AVSDK的回调接口   
 `-(void)OnVideoPreview:(QAVVideoFrame*)frameData`
 接收远程帧数据，再使用AVSDK的开放类`AVGLBaseView`渲染画面，这里的渲染用户只需要设置一个渲染视图，不需要做额外的操作，详情可参考[随心播](https://github.com/zhaoyang21cn/iOS_Suixinbo)的渲染逻辑。
 
