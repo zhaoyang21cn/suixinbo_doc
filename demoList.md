@@ -13,7 +13,14 @@
 * iOS https://github.com/zhaoyang21cn/iOS_Suixinbo
 
 #### 主播变脸
-![](https://mc.qcloudimg.com/static/img/8b82ceda045bebe51d057b9e9aa2b036/image.jpg)
+* ![](https://mc.qcloudimg.com/static/img/8b82ceda045bebe51d057b9e9aa2b036/image.jpg)
+
+#### 随心聊
+提供了好友，群组，发送文本、图片、语音、消息等IM功能的demo。
+* ![](https://mc.qcloudimg.com/static/img/78016e44249ecdf7891605171e47b7b8/image.jpg)
+* Android https://github.com/zhaoyang21cn/Android_Suixinliao    
+* iOS https://github.com/zhaoyang21cn/iOS_Suixinliao
+
 
 #### 实况转播实时评论
 * 即将推出
