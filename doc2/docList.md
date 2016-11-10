@@ -9,7 +9,7 @@
 
 ## 开发预备
 ### 业务交互流程
-### 快速参数配置
+### [快速参数配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/fastConfig.md)
 
 ## 终端集成
 ### Android端集成
