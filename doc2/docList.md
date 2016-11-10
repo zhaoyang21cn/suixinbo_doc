@@ -12,7 +12,7 @@
 #### [扣费和欠费](https://www.qcloud.com/doc/product/268/3166)
 
 ## 开发预备
-### 了解架构和交互
+### [了解系统架构](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Architecture.md)
 ### [快速参数配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/fastConfig.md)
 ### 准备业务后台接口
 
