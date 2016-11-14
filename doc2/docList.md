@@ -18,7 +18,7 @@
 
 ## 终端集成
 ### Android端集成
-1. [准备](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos) <br/>
+1. [准备](../随心播/Android随心播集成/) <br/>
 	下载sdk<br/>
 	导入项目<br/>
 	修改appid和accounttype<br/>
