@@ -18,12 +18,22 @@
 
 ## 终端集成
 ### Android端集成
-1. [准备](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos)
+1. [准备](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos) <br/>
+	下载sdk<br/>
+	导入项目<br/>
+	修改appid和accounttype<br/>
+	修改后台地址<br/>
+	编译运行<br/>
 2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveManager.md)
 3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveSenior.md)
 
 ### ios端集成
-1. 准备 
+1. 准备<br/>
+ 	下载sdk<br/>
+	导入项目<br/>
+	修改appid和accounttype<br/>
+	修改后台地址<br/>
+	编译运行<br/>
 2. 直播
 3. 互动消息和上麦
 
