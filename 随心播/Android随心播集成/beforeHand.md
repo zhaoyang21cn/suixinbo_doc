@@ -17,8 +17,9 @@
 	* [配置Android Studio参考](http://stormzhang.com/devtools/2014/11/25/android-studio-tutorial1/)
 	* Google服务在国内网络不稳定，推荐用VPN访问（推荐PureVPN）
     
-4. 当环境配置完毕，可以建一个工程测试下,当看到HelloWorld打印，表示环境搭建完成
-	![](./image/helloworld.png)
+4. 当环境配置完毕，可以建一个工程测试下,当看到HelloWorld打印，表示环境搭建完成           
+<img src="./image/helloAndroid.png" width = "240" height = "320" alt="helloAndroid.png" align=center />
+
 
 
 
