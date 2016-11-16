@@ -18,15 +18,14 @@
 
 ## 终端集成
 ### Android端集成
-1. [准备](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos) <br/>
+1. [准备](../随心播/Android随心播集成/beforeHand.md) <br/>
 	下载sdk<br/>
 	导入项目<br/>
 	修改appid和accounttype<br/>
 	修改后台地址<br/>
 	编译运行<br/>
-2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveManager.md)
-3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveSenior.md)
-4. 随心播(demo)集成说明
+2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveManager.md)
+3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveSenior.md)
 
 ### ios端集成
 1. 准备<br/>
@@ -37,19 +36,18 @@
 	编译运行<br/>
 2. 直播
 3. 互动消息和上麦
-4. 随心播(demo)集成说明
-
-### web集成
-1. 准备
-2. 互动消息
-3. 微信QQ分享
-4. 开播(暂时不放出)
-
 
 ### PC端集成
 1. 准备
 2. 直播
 3. 互动消息和上麦
+
+
+### web集成
+1. 准备
+2. 互动消息
+3. 微信QQ分享
+4. 主播
 
 
 ### 旁路直播开发
@@ -67,9 +65,7 @@
 ### 账号登录集成
 
 ## 后台接口
-### [后台接口调用格式](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCall.md)
-### [录制的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallRecord.md)
-### [旁路直播的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallPushStream.md)
+### 推流和录制
 ### 查询录制结果
 ### 查询点播结果
 
@@ -77,7 +73,7 @@
 ### 流控配置
 ### 质量监控
 ### 网络延时优化
-### 自定义音视频输入流
+### 自定义输入流
 ### 画面对焦、旋转和裁剪
 
 ## 运营相关
