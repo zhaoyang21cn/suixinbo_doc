@@ -70,10 +70,79 @@
 #### [eclipse开发集成文档](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/eclipse_readme.md) (不推荐)
 
 
-
-
-
+## 示例参考
+ 为了方便客户快速集成直播业务，我们在github提供一个[简单直播的示例](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos)和一个业务级的[应用随心播](https://github.com/zhaoyang21cn/Android_Suixinbo)
  
+ <br /> 
+	![](./image/suixinbo.png)
+	
+<br /> 
+<div align=center>
+<img src="./image/demos.png" width = "240" height = "320" align=center /> 
+<img src="./image/livedemo.png" width = "240" height = "320" align=center /> 
+</div>
+
+#3修改Appid和AccountType
+   Appid应用唯一腾讯云服务的标示。[如何申请Appid](https://www.qcloud.com/doc/product/268/4899)
+   
+   随心播修改位置
+   ![](./image/idntype.png)
+   
+   简单直播修改位置
+   ![](./image/iliveappid.png)
+
+#4修改后台地址
+ 目前随心播后台主要用来维护直播房间列表。如果复用随心播客户端代码，需要修改随心播后台地址为业务方自己部署的服务器地址。 <br />     
+      
+| 接口| 说明 |
+|---------|---------|
+| GET_MYROOMID | 获取自己分配的房间号 |
+| NEW_ROOM_INFO | 创建新房间 |
+| STOP_ROOM | 退出房间 |
+| GET_LIVELIST | 获取房间列表 |
+| SEND_HEARTBEAT | 房间心跳 |
+| GET_COS_SIG | 图片上传相关 |
+ 
+  ![](./image/server.png)
+ 
+ 
+
+#5编译运行
+###简单直播配置参考
+* 由于目前只支持armeabi架构，如果工程(或依赖库)中有多架构，需要在build.gradle中添加以下配置<br /> （如果包含子工程子工程也要加）
+<pre>
+android{
+    defaultConfig{
+        ndk{
+            abiFilter 'armeabi'
+        }
+    }
+}
+</pre>播配置参考
+
+
+
+
+###随心播配置参考
+* 请注意配置jcenter库 腾讯内部是自己的maven<br /> 
+ ![](./image/respositories.png)
+* 配置自己的版本号<br /> 
+ ![](./image/sdkversion.png)
+* 混淆相关<br /> 
+
+		-keep class com.tencent.**{*;}
+		-dontwarn com.tencent.**
+
+		-keep class tencent.**{*;}
+		-dontwarn tencent.**
+
+		-keep class qalsdk.**{*;}
+		-dontwarn qalsdk.**
+* 配置信令服务<br /> 
+ ![](./image/qalservice.png)
+* 申请权限<br /> 
+ ![](./image/rights.png)
+
     	
 	
 
