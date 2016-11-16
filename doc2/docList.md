@@ -72,8 +72,8 @@
 ### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
 ### 自定义音视频输入流
 ### 画面对焦
-1. [iOS](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E6%89%8B%E5%8A%A8%E8%81%9A%E7%84%A6.md) <br/>
-2. Android
+ [iOS](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E6%89%8B%E5%8A%A8%E8%81%9A%E7%84%A6.md) <br/>
+ Android
 
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
 ### 在线人数
