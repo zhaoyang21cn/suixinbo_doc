@@ -28,7 +28,7 @@
 3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveSenior.md)
 
 ### ios端集成
-1. 准备<br/>
+1. [准备](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/%E9%9A%8F%E5%BF%83%E6%92%AD/iOS%E9%9A%8F%E5%BF%83%E6%92%AD%E9%9B%86%E6%88%90/beforeHand.md)<br/>
  	下载sdk<br/>
 	导入项目<br/>
 	修改appid和accounttype<br/>
