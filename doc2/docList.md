@@ -14,7 +14,7 @@
 ## 开发预备
 ### [了解系统架构](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Architecture.md)
 ### [快速参数配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/fastConfig.md)
-### 准备业务后台接口
+### [准备业务后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/serverInit.md)
 
 ## 终端集成
 ### Android端集成
@@ -52,32 +52,34 @@
 3. 互动消息和上麦
 
 
-### 旁路直播开发
-1. 旁路直播概念
-2. 如何开发
+### [旁路直播](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/pushStream.md)
 
-### 录制开发
-1. 录制概念
-2. 如何开发
+### [录制](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/record.md)
 
 ## 重要概念
 
-### 音视频权限管理
-### DC与OC的分配和切换
-### 账号登录集成
+### [DC与OC的分配和切换](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/oddc.md)
+### [音视频权限管理](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/enterRoomParam.md)
 
-## 后台接口
+### 账号登录集成
+* [账号登录集成说明](https://www.qcloud.com/doc/product/268/3328)
+* [独立模式](https://www.qcloud.com/doc/product/268/3329)
+* [托管模式](https://www.qcloud.com/doc/product/268/3330)
+* [TLS后台API](https://www.qcloud.com/doc/product/268/3331)
+* [密钥和签名相关](https://www.qcloud.com/doc/product/268/3332)
+
+## 后台接口（暂不放出）
 ### [后台接口调用格式](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCall.md)
 ### [录制的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallRecord.md)
 ### [旁路直播的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallPushStream.md)
-### 查询录制结果
-### 查询点播结果
+
 
 ## 常见问题
-### 流控配置
-### 质量监控
-### 网络延时优化
+### [流控配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/spearConfig.md)
+### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
 ### 自定义音视频输入流
-### 画面对焦、旋转和裁剪
+### 画面对焦
+### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
+### 在线人数
 
 ## 运营相关
