@@ -20,6 +20,7 @@ TILLiveSDKShow/TILLiveSDKShow/ConstHeader.h
 
 简单直播修改位置
 TCILiveSDKDemo/TCILiveSDKDemo/AppDelegate.m
+
 ![](http://img.blog.csdn.net/20161116194345186)
 
 #4修改后台地址
