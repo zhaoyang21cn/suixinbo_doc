@@ -70,7 +70,7 @@
 ## 常见问题
 ### [流控配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/spearConfig.md)
 ### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
-### 自定义音视频输入流(./custominput.md)
+### [自定义音视频输入流](./custominput.md)
 ### [画面对焦](./focus.md)
 
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
