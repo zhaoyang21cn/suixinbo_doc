@@ -107,6 +107,78 @@ int|视频源类型。当前仅支持VIDEO_SRC_TYPE_CAMERA
 ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.length,
     mCameraSize.width, mCameraSize.height, 270, AVVideoCtrl.COLOR_FORMAT_I420, AVView.VIDEO_SRC_TYPE_CAMERA);
 ```
-
+ -----
 ### iOS
-*(待补充)*
+自定义采集画面的用途主要用于预处理原始数据，比如用户需要人脸识别，画面美化，动效处理等，如下是通过自定义采集画面后，增加动效效果图，示例图：
+
+![](http://mc.qcloudimg.com/static/img/f532b2ba735514ed2faff41cf805a817/image.png)
+
+**注：动效效果是用户自己增加的，和本文档无关，用户可以对原始数据做任何预处理（不仅是动效）**
+
+1、流程说明
+首先请记住，若要使用自定义采集画面，则采集画面的过程与AVSDK没有任何关系，完全不依赖AVSDK，自定义采集画面的流程中，AVSDK的作用是透传数据以及渲染远程数据。而本文介绍的流程是：***自定义采集画面－>画面传入AVSDK－>远程端收到画面帧渲染*** 的整个过程，流程图如下：
+![](http://mc.qcloudimg.com/static/img/53b3bafb43c874a53ce59377cba07ca7/image.png)
+
+
+2、采集前准备
+***进入房间之后，采集画面之前***
+
+|接口|描述|
+|---|---|
+|enableExternalCapture:|打开(关闭)外部视频捕获设备,自定义采集时，需要打开.返回QAV_OK表示执行成功。用了此方法之后，***不能***再调用AVSDK的打开摄像头接口，且AVSDK的美白，美颜将失效|
+
+|参数类型|参数名|说明|
+|---|---|---|
+|BOOL|isEnableExternalCapture|是否打开外部视频捕获设备，自定义采集时传YES|
+
+* 示例：
+
+```
+    QAVVideoCtrl *videoCtrl = [_avContext videoCtrl];
+    [videoCtrl enableExternalCapture:YES];
+```
+
+3、自定义采集
+自定义采集使用的是系统层级接口，和AVSDK没有直接联系，不做过多赘述，简单列下需要用到的系统类和方法
+
+|系统类或方法|描述|
+|---|---|
+|AVCaptureSession|采集画面|
+|AVCaptureDeviceInput|画面输入流|
+|AVCaptureVideoDataOutput|画面输出流|
+|captureOutput: didOutputSampleBuffer: fromConnection:|采集画面回调函数，采集到的画面将从这里回吐，用户可在这个接口作预处理|
+
+4、采集后处理
+接收到系统回吐出的原始数据（`CMSampleBufferRef`类型数据），用户就可以对其做预处理，比如美白，美颜，人脸识别等，预处理之后的画面需要用户自己完成渲染，与AVSDK无直接联系。
+
+5、AVSDK透传
+
+|接口|描述|
+|---|---|
+|fillExternalCaptureFrame:|向音视频SDK传入捕获的视频帧，返回QAV_OK表示执行成功|
+
+|参数类型|参数名|说明|
+|---|---|---|
+|QAVVideoFrame|frame|AVSDK画面帧类型，用户需将自定义采集的画面转换成QAVVideoFrame类型|
+*示例：
+
+```
+    QAVVideoCtrl *videoCtrl = [_avContext videoCtrl];
+    QAVResult result = [videoCtrl fillExternalCaptureFrame:frame];
+```
+
+6、远端渲染
+
+|接口|描述|
+|---|---|
+|OnVideoPreview:|远程画面回调，接收远程帧数据，再使用AVSDK的开放类`AVGLBaseView`渲染画面，这里的渲染用户只需要设置一个渲染视图，不需要做额外的操作，详情可参考[随心播](https://github.com/zhaoyang21cn/iOS_Suixinbo)的渲染逻辑。|
+
+|参数类型|参数名|说明|
+|---|---|---|
+|QAVVideoFrame|frameData|AVSDK画面帧类型|
+
+7、注意事项
+> 1 如果渲染自定义采集的画面使用了OpenGL，则不能使用AVSDK中开放的`AVGLBaseView`作为渲染视图，否则会Crash。也就是说，此时界面上应该有两个view，一个渲染自定义采集的画面，另一个渲染`QAVVideoFrame`对象。
+
+> 2 转换成`QAVVideoFrame`时，属性`color_format`必需填写`AVCOLOR_FORMAT_NV12`
+`srcType`属性必须填写`QAVVIDEO_SRC_TYPE_CAMERA`
