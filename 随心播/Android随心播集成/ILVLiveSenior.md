@@ -24,7 +24,7 @@
             
 ##2.上麦互动
 * 上麦互动流程示意图    
-![](./image/openVideo.png)
+![](./image/OpenVideo.png)
 
 * 上麦邀请
 
