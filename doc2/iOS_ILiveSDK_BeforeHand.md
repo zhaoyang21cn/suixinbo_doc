@@ -9,7 +9,9 @@ Frameworks : http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip 下载后�
 
 # 2 导入项目
 将下载好的Frameworks复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
-![](//mc.qcloudimg.com/static/img/03ddb3785250513b0cb7b0fee2380a11/image.png)
+
+![](http://mc.qcloudimg.com/static/img/03ddb3785250513b0cb7b0fee2380a11/image.png)
+
 
 ## 库类介绍
 -----
