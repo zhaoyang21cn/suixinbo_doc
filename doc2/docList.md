@@ -24,18 +24,18 @@
 	修改appid和accounttype<br/>
 	修改后台地址<br/>
 	编译运行<br/>
-2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveManager.md)
-3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveSenior.md)
+2. [直播](../随心播/Android随心播集成/ILVLiveManager.md)
+3. [互动消息和上麦](../随心播/Android随心播集成/ILVLiveSenior.md)
 
 ### ios端集成
-1. [准备](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/%E9%9A%8F%E5%BF%83%E6%92%AD/iOS%E9%9A%8F%E5%BF%83%E6%92%AD%E9%9B%86%E6%88%90/beforeHand.md)<br/>
+1. [准备](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_BeforeHand.md)<br/>
  	下载sdk<br/>
 	导入项目<br/>
 	修改appid和accounttype<br/>
 	修改后台地址<br/>
 	编译运行<br/>
-2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E7%9B%B4%E6%92%AD.md)
-3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E4%BA%92%E5%8A%A8%E6%B6%88%E6%81%AF%E5%92%8C%E4%B8%8A%E9%BA%A6.md)
+2. [直播](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Live.md)
+3. [互动消息和上麦](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Interactive.md)
 
 ### PC端集成
 1. 准备
