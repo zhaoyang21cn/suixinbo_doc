@@ -11,6 +11,29 @@ Frameworks : http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip 下载后�
 将下载好的Frameworks复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
 ![](http://img.blog.csdn.net/20161117120226091)
 
+## 库类介绍
+-----
+从官网下载的类库只包含一个文件夹Frameworks，里面包含了集成直播业务的所有SDK
+
+|Frameworks文件夹|说明|
+|---|---|
+|AVSDK|包括音视频相关的所有SDK|
+|IMSDK|包括即时通讯相关的所有SDK|
+|ILiveSDK|包括ILiveSDK和所有基于ILiveSDK的业务SDK|
+
+### 库类清单
+|序号|名称|所在文件夹|说明|
+|---|---|---|---|
+|1|QAVSDK.framework|Frameworks/AVSDK/|音视频SDK|
+|2|xplatform.framework|Frameworks/AVSDK/|银饰品SDK所依赖的SDK|
+|3|IMCore.framework|Frameworks/IMSDK/|即时通讯核心库|
+|4|ImSDK.framework|Frameworks/IMSDK/|即时通讯SDK|
+|5|IMSDKBugly.framework|Frameworks/IMSDK/|上报SDK|
+|6|QALSDK.framework|Frameworks/IMSDK/|即时通讯网络模块SDK|
+|7|TLSSDK.framework|Frameworks/IMSDK/|登录服务SDK|
+|8|ILiveSDK.framework|Frameworks/ILiveSDK/|互动直播基础功能SDK|
+|9|TILLiveSDK.framework|Frameworks/ILiveSDK/|直播SDK(针对直播场景封装的SDK，包括互动连麦等功能)|
+|10|TILCallSDK.framework|Frameworks/ILiveSDK/|多人通话SDK(针对多人通话场景封装的SDK，包括拨打电话、接听等功能)|
 
 # 3 修改Appid和AccountType
 Appid是应用唯一腾讯云服务的标识。[如何申请Appid](https://www.qcloud.com/doc/product/268/4899)
