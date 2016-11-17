@@ -1,5 +1,5 @@
 # ILiveSDK直播流程图：
-![这里写图片描述](http://img.blog.csdn.net/20161117122949323)
+![](http://mc.qcloudimg.com/static/img/06d2fb5027be53492249d4b81bd2f5a5/image.png)
 
 
 # 1 初始化ILiveSDK
