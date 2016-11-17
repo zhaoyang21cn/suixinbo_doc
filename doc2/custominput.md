@@ -59,11 +59,11 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 
 ```
 // 设置音频处理回调
-[_avContext.audioCtrl setAudioDataEventDelegate:self];
+[[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataEventDelegate:self];
 
 // 注意为QAVAudioDataSource_MixToSend
-[_avContext.audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToSend];
-[_avContext.audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToSend desc:pcmdesc];
+[[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToSend];
+[[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToSend desc:pcmdesc];
 
 ```
 
@@ -71,11 +71,11 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 
 ```
  // 设置音频处理回调
- [_avContext.audioCtrl setAudioDataEventDelegate:self];
+ [[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataEventDelegate:self];
  
  // 注意为QAVAudioDataSource_MixToPlay
- [_avContext.audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToPlay];
- [_avContext.audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToPlay desc:pcmdesc];
+ [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToPlay];
+ [[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToPlay desc:pcmdesc];
 
 ```
 
@@ -167,8 +167,8 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 ```
 
 // 取消所有音频透传处理
-[_avContext.audioCtrl unregisterAudioDataCallbackAll];
-[_avContext.audioCtrl setAudioDataEventDelegate:nil];
+[[[ILiveSDK getInstance] getAVContext].audioCtrl unregisterAudioDataCallbackAll];
+[[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataEventDelegate:nil];
 
 // 或调用AVSDK接口取消不同类型的透传
 // 方法详见QAVSDK.framework中的QAVAudioCtrl
