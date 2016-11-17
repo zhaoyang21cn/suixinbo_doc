@@ -35,6 +35,8 @@ Frameworks : http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip 下载后�
 |9|TILLiveSDK.framework|Frameworks/ILiveSDK/|直播SDK(针对直播场景封装的SDK，包括互动连麦等功能)|
 |10|TILCallSDK.framework|Frameworks/ILiveSDK/|多人通话SDK(针对多人通话场景封装的SDK，包括拨打电话、接听等功能)|
 
+### [示例下载](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/tree/master/TCILiveSDKDemo)
+
 # 3 修改Appid和AccountType
 Appid是应用唯一腾讯云服务的标识。[如何申请Appid](https://www.qcloud.com/doc/product/268/4899)
 
