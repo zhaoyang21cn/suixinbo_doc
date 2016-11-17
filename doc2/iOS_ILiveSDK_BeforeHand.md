@@ -9,7 +9,7 @@ Frameworks : http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip 下载后�
 
 # 2 导入项目
 将下载好的Frameworks复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
-![](http://img.blog.csdn.net/20161117120226091)
+![](//mc.qcloudimg.com/static/img/03ddb3785250513b0cb7b0fee2380a11/image.png)
 
 ## 库类介绍
 -----
@@ -42,11 +42,11 @@ Appid是应用唯一腾讯云服务的标识。[如何申请Appid](https://www.q
 
 随心播修改位置
 TILLiveSDKShow/TILLiveSDKShow/ConstHeader.h
-![这里写图片描述](http://img.blog.csdn.net/20161117120650470)
+![](//mc.qcloudimg.com/static/img/78f29b400ff3c1eff1546ade73384dda/image.png)
 
 简单直播修改位置
 TCILiveSDKDemo/TCILiveSDKDemo/AppDelegate.m
-![这里写图片描述](http://img.blog.csdn.net/20161117120702689)
+![](//mc.qcloudimg.com/static/img/720f74698250772e5d1471df78b76892/image.png)
 
 
 # 4 修改后台地址
@@ -89,10 +89,9 @@ TCILiveSDKDemo/TCILiveSDKDemo/AppDelegate.m
 
 ### 5.2 工程配置
 1、Build Settings/Linking/Other Linker Flags，增加 -ObjC 配置，如下图所示：
-![这里写图片描述](http://img.blog.csdn.net/20161117122035835)
+![](//mc.qcloudimg.com/static/img/f473f6c580a4196af7d3d33edf140bdb/image.png)
 
 2、Build Settings/Linking/Bitcode，增加 Bitcode 配置，设置为NO，如下图所示:
-![这里写图片描述](http://img.blog.csdn.net/20161117122344726)
+![](//mc.qcloudimg.com/static/img/f473f6c580a4196af7d3d33edf140bdb/image.png)
 
 若上述步骤均无误，则工程编译可以通过了。
-
