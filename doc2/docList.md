@@ -26,7 +26,10 @@
 	编译运行<br/>
 2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveManager.md)
 3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveSenior.md)
-4. 随心播(demo)集成说明
+4. 随心播(demo)集成说明<br/>
+	代码结构简单说明<br/>
+	直播业务逻辑封装(framework)<br/>
+	集成可以修改的地方<br/>
 
 ### ios端集成
 1. 准备<br/>
@@ -37,12 +40,16 @@
 	编译运行<br/>
 2. 直播
 3. 互动消息和上麦
-4. 随心播(demo)集成说明
+4. 随心播(demo)集成说明<br/>
+	代码结构简单说明<br/>
+	直播业务逻辑封装(framework)<br/>
+	集成可以修改的地方<br/>
 
 ### web集成
-1. 准备
-2. 互动消息
-3. 微信QQ分享
+1. 准备<br/>
+	旁路推流
+2. 微信QQ分享
+3. 互动消息
 4. 开播(暂时不放出)
 
 
