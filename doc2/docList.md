@@ -18,45 +18,30 @@
 
 ## 终端集成
 ### Android端集成
-1. [准备](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos) <br/>
+1. [准备](../随心播/Android随心播集成/beforeHand.md) <br/>
 	下载sdk<br/>
 	导入项目<br/>
 	修改appid和accounttype<br/>
 	修改后台地址<br/>
 	编译运行<br/>
-2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveManager.md)
-3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/ILVLiveSenior.md)
-4. 随心播(demo)集成说明<br/>
-	代码结构简单说明<br/>
-	直播业务逻辑封装(framework)<br/>
-	集成可以修改的地方<br/>
+2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveManager.md)
+3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/ILVLiveSenior.md)
 
 ### ios端集成
-1. 准备<br/>
+1. [准备](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/%E9%9A%8F%E5%BF%83%E6%92%AD/iOS%E9%9A%8F%E5%BF%83%E6%92%AD%E9%9B%86%E6%88%90/beforeHand.md)<br/>
  	下载sdk<br/>
 	导入项目<br/>
 	修改appid和accounttype<br/>
 	修改后台地址<br/>
 	编译运行<br/>
-2. 直播
-3. 互动消息和上麦
-4. 随心播(demo)集成说明<br/>
-	代码结构简单说明<br/>
-	直播业务逻辑封装(framework)<br/>
-	集成可以修改的地方<br/>
-
-### web集成
-1. 准备<br/>
-	旁路推流
-2. 微信QQ分享
-3. 互动消息
-4. 开播(暂时不放出)
-
+2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E7%9B%B4%E6%92%AD.md)
+3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E4%BA%92%E5%8A%A8%E6%B6%88%E6%81%AF%E5%92%8C%E4%B8%8A%E9%BA%A6.md)
 
 ### PC端集成
 1. 准备
 2. 直播
 3. 互动消息和上麦
+
 
 
 ### [旁路直播](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/pushStream.md)
@@ -75,6 +60,7 @@
 * [TLS后台API](https://www.qcloud.com/doc/product/268/3331)
 * [密钥和签名相关](https://www.qcloud.com/doc/product/268/3332)
 
+
 ## 后台接口（暂不放出）
 ### [后台接口调用格式](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCall.md)
 ### [录制的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallRecord.md)
@@ -84,9 +70,11 @@
 ## 常见问题
 ### [流控配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/spearConfig.md)
 ### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
-### 自定义音视频输入流
-### 画面对焦
+### [自定义音视频输入流](./custominput.md)
+### [画面对焦](./focus.md)
+
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
 ### 在线人数
+
 
 ## 运营相关
