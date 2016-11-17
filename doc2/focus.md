@@ -134,7 +134,9 @@ Android的对焦原理是，基于运动传感器事件，在手机发生移动�
 
 
 1、添加点击事件回调，如setOnTouchListener
+
 2、获取点击坐标，如MotionEvent
+
 3、获取Camera对象:
 
 ```java
