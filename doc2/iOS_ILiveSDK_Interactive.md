@@ -47,10 +47,10 @@ msg.sendId = @"这里是消息的接收方id";
 ```
 ### 2 上麦
 #### 2.1 主播邀请上麦流程图：
-![](http://img.blog.csdn.net/20161117135210972)
+![](http://mc.qcloudimg.com/static/img/ccbafe376da2e175ff41bd681856581e/image.png)
 ------
 #### 2.2 观众请求上麦流程图:
-![](http://img.blog.csdn.net/20161117140103020)
+![](http://mc.qcloudimg.com/static/img/4d21a6ce428740fa16ebc58a0675b3e7/image.png)
 ------
 #### 2.3 接口
 ##### 2.3.1 发送自定义消息接口
