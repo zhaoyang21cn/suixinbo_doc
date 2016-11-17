@@ -19,6 +19,15 @@
 
 1、注册回调
 
+接口名|接口描述
+:--|:--:
+registAudioDataCallbackWithByteBuffer|注册具体数据类型的回调函数
+
+参数类型|说明
+:--|:--:
+int|音频数据类型(参考上图)
+RegistAudioDataCompleteCallbackWithByteBuffer|指向App定义的音频数据回调函数
+
 ```java
 ILiveSDK.getInstance().getAvAudioCtrl().registAudioDataCallbackWithByteBuffer(
     AVAudioCtrl.AudioDataSourceType.AUDIO_DATA_SOURCE_MIXTOSEND, mAudioDataCompleteCallbackWithByffer);
