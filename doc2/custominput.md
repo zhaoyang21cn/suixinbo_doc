@@ -53,7 +53,144 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 ```
 
 ### iOS
-*(待补充)*
+
+**音频透传**，主要用于在直播中对Mic采集到的数据作再加工处理，一般用于在直播间内添加背景音等，其对透传的音频数据有格式要求，默认使用的音频格式为QAVAudioFrameDesc = {48000, 2, 16}。通常的有下面两种使用方法：<br>
+1､ 麦克风透传：开麦克风端（有上行音频能力端）能听到，其他人可听到：以下代码为设置麦克风透传
+
+```
+// 设置音频处理回调
+[_avContext.audioCtrl setAudioDataEventDelegate:self];
+
+// 注意为QAVAudioDataSource_MixToSend
+[_avContext.audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToSend];
+[_avContext.audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToSend desc:pcmdesc];
+
+```
+
+2､ 扬声器透传数据：开扬声器端配置，只有自己听到，其他人听不到：以下代码为设置扬声器透传
+
+```
+ // 设置音频处理回调
+ [_avContext.audioCtrl setAudioDataEventDelegate:self];
+ 
+ // 注意为QAVAudioDataSource_MixToPlay
+ [_avContext.audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToPlay];
+ [_avContext.audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToPlay desc:pcmdesc];
+
+```
+
+3､ 音频透传处理的回调回调处理：注意三个回调中的注释
+
+```
+- (QAVResult)audioDataComes:(QAVAudioFrame *)audioFrame type:(QAVAudioDataSourceType)type
+{
+    // 主要用于保存直播中的音频数据
+    return QAV_OK;
+}
+
+- (void)handle:(QAVAudioFrame **)frameRef withPCM:(NSData *)data offset:(NSInteger *)offset
+{
+	// 演示如何将透传的数据添加到QAVAudioFrame
+    const QAVAudioFrame *aFrame = *frameRef;
+    NSInteger off = *offset;
+    NSInteger length = [aFrame.buffer length];
+    if (length)
+    {
+        NSMutableData *pdata = [NSMutableData data];
+        const Byte *btyes = [data bytes];
+        
+        while (pdata.length < length)
+        {
+            if (off + length > data.length)
+            {
+                const Byte *byteOff = btyes + off;
+                [pdata appendBytes:byteOff length:data.length - off];
+                off = 0;
+            }
+            else
+            {
+                const Byte *byteOff = btyes + off;
+                [pdata appendBytes:byteOff length:length];
+                off += length;
+            }
+        }
+        
+        if (pdata.length == length)
+        {
+            *offset = off;
+            
+            const void *abbytes = [aFrame.buffer bytes];
+            memcpy((void *)abbytes, [pdata bytes], length);
+        }
+    }
+}
+
+- (QAVResult)audioDataShouInput:(QAVAudioFrame *)audioFrame type:(QAVAudioDataSourceType)type
+{
+    // 混音输入（Mic和Speaker）的主要回调
+    
+    // 麦克风透传处理
+    if (type == QAVAudioDataSource_MixToSend)
+    {
+    	// self.micAudioTransmissionData 为要透传的音频数据，默认使用QAVAudioFrameDesc = {48000, 2, 16}，外部传入数据时，注意对应，外部传入的时候，注意相关的参数
+        if (self.micAudioTransmissionData)
+        {
+            NSInteger off = self.micAudioOffset;
+            [self handle:&audioFrame withPCM:self.micAudioTransmissionData offset:&off];
+            self.micAudioOffset = off;
+        }
+    }
+    // 扬声明器透传处理
+    else if (type == QAVAudioDataSource_MixToPlay)
+    {
+    // self.speakerAudioTransmissionData 为要透传的音频数据，默认同样使用QAVAudioFrameDesc = {48000, 2, 16}，外部传入数据时，注意对应，外部传入的时候，注意相关的参数
+        if (self.speakerAudioTransmissionData)
+        {
+            NSInteger off = self.speakerAudioOffset;
+            [self handle:&audioFrame withPCM:self.speakerAudioTransmissionData offset:&off];
+            self.speakerAudioOffset = off;
+        }
+    }
+//    NSLog(@"%@", audioFrame.buffer);
+    return QAV_OK;
+}
+
+- (QAVResult)audioDataDispose:(QAVAudioFrame *)audioFrame type:(QAVAudioDataSourceType)type
+{
+    // 主要用作作变声处理
+    return QAV_OK;
+}
+```
+
+4､ 退出直播间时，取消透传回调
+
+```
+
+// 取消所有音频透传处理
+[_avContext.audioCtrl unregisterAudioDataCallbackAll];
+[_avContext.audioCtrl setAudioDataEventDelegate:nil];
+
+// 或调用AVSDK接口取消不同类型的透传
+// 方法详见QAVSDK.framework中的QAVAudioCtrl
+/*!
+ @abstract      反注册音频数据类型的回调
+ @discussion    要注册监听的音频数据源类型，具体参考QAVAudioDataSourceType。
+ @param         type            要反注册监听的音频数据源类型，具体参考QAVAudioDataSourceType
+ @return        成功返回QAV_OK, 其他情况请参照QAVResult。
+ @see           QAVAudioDataSourceType QAVResult
+ */
+- (QAVResult)unregisterAudioDataCallback:(QAVAudioDataSourceType)type;
+
+        
+```
+
+
+
+
+
+
+
+
 
 ##自定义视频数据
 
