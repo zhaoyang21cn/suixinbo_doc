@@ -116,7 +116,8 @@ Android的对焦原理是，基于运动传感器事件，在手机发生移动�
                }
             }
             else
-            {
+
+{
                 [device rampToVideoZoomFactor:1.0 withRate:10];
             }
             [device unlockForConfiguration];
@@ -129,9 +130,72 @@ Android的对焦原理是，基于运动传感器事件，在手机发生移动�
 ### Android手动对焦
 >流程如下:
 
-```graphLR
-点击事件-->获取点击坐标
-获取点击坐标-->获取Camera对象
-获取Camera对象-->设置焦点
-设置焦点-->开始对焦
+![](https://zhaoyang21cn.github.io/ilivesdk_help/readme_img/focus_flow.png)
+
+
+1、添加点击事件回调，如setOnTouchListener
+2、获取点击坐标，如MotionEvent
+3、获取Camera对象:
+
+```java
+Camera camera = ILiveSDK.getInstance().getAvVideoCtrl().getCamera();
+```
+
+4、根据焦点来对焦
+以下代码可供参考:
+```java
+protected boolean onFocus(Point point, Camera.AutoFocusCallback callback) {
+    if (camera == null) {
+        return false;
+    }
+
+    Camera.Parameters parameters = null;
+    try {
+        parameters = camera.getParameters();
+        Log.v(TAG, "onFocus->camera parameters:"+parameters.getPreviewSize().width+","+parameters.getPreviewSize().height);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+    //不支持设置自定义聚焦，则使用自动聚焦，返回
+    if(Build.VERSION.SDK_INT >= 14) {
+        if (parameters.getMaxNumFocusAreas() <= 0) {
+            return focus(camera, callback);
+        }
+
+        Log.i(TAG, "onCameraFocus:" + point.x + "," + point.y);
+
+        List<Camera.Area> areas = new ArrayList<Camera.Area>();
+        int left = point.x - 300;
+        int top = point.y - 300;
+        int right = point.x + 300;
+        int bottom = point.y + 300;
+        left = left < -1000 ? -1000 : left;
+        top = top < -1000 ? -1000 : top;
+        right = right > 1000 ? 1000 : right;
+        bottom = bottom > 1000 ? 1000 : bottom;
+        areas.add(new Camera.Area(new Rect(left, top, right, bottom), 100));
+        parameters.setFocusAreas(areas);
+        try {
+            //兼容部分定制机型，在此捕捉异常，对实际聚焦效果没影响
+            camera.setParameters(parameters);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    return focus(camera, callback);
+}
+
+private boolean focus(Camera camera, Camera.AutoFocusCallback callback) {
+    try {
+        camera.autoFocus(callback);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+    return true;
+}
 ```
