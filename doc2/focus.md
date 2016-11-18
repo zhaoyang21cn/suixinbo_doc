@@ -154,7 +154,6 @@ protected boolean onFocus(Point point, Camera.AutoFocusCallback callback) {
     Camera.Parameters parameters = null;
     try {
         parameters = camera.getParameters();
-        Log.v(TAG, "onFocus->camera parameters:"+parameters.getPreviewSize().width+","+parameters.getPreviewSize().height);
     } catch (Exception e) {
         e.printStackTrace();
         return false;

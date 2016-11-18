@@ -74,7 +74,7 @@
 ### [画面对焦](./focus.md)
 
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
-### 在线人数
+### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
 
 
 ## 运营相关
