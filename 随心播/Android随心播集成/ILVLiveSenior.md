@@ -1,8 +1,8 @@
-##互动上麦与消息
+##消息与互动上麦
 
 ###1.发送消息
 
-####普通文本消息
+####1.1发送普通文本消息
 | 接口名|  接口描述  |
 |---------|---------|
 | **sendText** | 发送文本消息 通过消息体类型可以发群消息和C2C消息 |
@@ -35,7 +35,7 @@
 ```
 
 
-####信令消息
+####1.2发送信令消息
 | 接口名|  接口描述  |
 |---------|---------|
 | **sendCustomCmd** | 发送信令消息 通过消息体类型可以发群消息和C2C消息 |
@@ -81,7 +81,15 @@
          
 ###2.解析消息
 
-* 解析信令上麦
+> ILVLiveConfig 是全局直播设置，里面可以配置一个消息回调ILVLiveConfig.ILVLiveMsgListener。通过这个消息回调可以拿到对应的消息类型，然后塞回ILVLiveManager进行配置。
+ 
+| 参数类型| 说明 |
+|---------|---------|
+| onNewCmdMsg | iLiveSDK预定义信令回调 例如上麦 下麦|
+| onNewCustomMsg | 用户自定义信令回调 |
+| onNewTextMsg | 普通文本接收回调 |
+
+* 示例
 
 ```java
         ILVLiveConfig liveConfig = new ILVLiveConfig();
@@ -145,5 +153,56 @@
             
   
 ###2.上麦互动
-* 上麦互动流程示意图    
-![](./image/OpenVideo.png)          
+            
+#### 2.1上麦行为  
+>  切换角色 --> 打开摄像头 -->渲染画面 （如果开启自动渲染，则省略这一步）
+
+|接口 | 接口描述 |
+|---------|---------|
+| upToVideoMember | 包括切换角色，权限，场景，打开摄像头 合成一步|
+
+
+* 示例     
+
+```java
+ILVLiveManager.getInstance().upToVideoMember(ILVLiveConstants.VIDEO_MEMBER_AUTH, ILVLiveConstants.VIDEO_MEMBER_ROLE, new ILiveCallBack() {
+                            @Override
+                            public void onSuccess(Object data) {
+
+                            }
+
+                            @Override
+                            public void onError(String module, int errCode, String errMsg) {
+
+                            }
+                        });
+```
+
+
+#### 2.2下麦行为  
+>  切换角色 --> 关闭摄像头 -->结束渲染
+
+|接口 | 接口描述 |
+|---------|---------|
+| downToNorMember | 包括切换角色，权限，场景，关闭摄像头 合成一步|
+
+
+* 示例     
+
+```java
+ILVLiveManager.getInstance().downToNorMember(ILVLiveConstants.NORMAL_MEMBER_AUTH, ILVLiveConstants.NORMAL_MEMBER_ROLE, new ILiveCallBack() {
+                            @Override
+                            public void onSuccess(Object data) {
+
+                            }
+
+                            @Override
+                            public void onError(String module, int errCode, String errMsg) {
+
+                            }
+                        });
+```
+<br/>
+* 附随心播上麦流程参考
+
+![](./image/OpenVideo.png)
