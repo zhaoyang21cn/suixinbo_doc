@@ -15,4 +15,4 @@
 2. app用户开房间，上麦等能力是由app指定的，当然也可以在app运行时根据业务逻辑动态切换；
 3. 开发者server可以通过腾讯互动直播给app里的用户或者群组push消息。也可以调用腾讯互动直播rest接口做推流和录制的相关操作；
 
-![腾讯互动直播数据交互](https://mc.qcloudimg.com/static/img/f1651285f928c7b64d4630f3b103315f/image.png)
+![腾讯互动直播数据交互](https://mc.qcloudimg.com/static/img/d1a3826d6a0dbea846c48ce36638c9e3/hudongzhibo.png)
