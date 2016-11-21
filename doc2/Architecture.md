@@ -12,7 +12,15 @@
 ### 数据交互时序说明
 1. 步骤1和2解释了独立帐号模式下，app用户完成腾讯互动直播身份认证的过程。<br/>
 	如果采用托管帐号模式，则不需要开发者server参与，直接调互动直播sdk login接口即可；
-2. app用户开房间，上麦等能力是由app指定的，当然也可以在app运行时根据业务逻辑动态切换；
-3. 开发者server可以通过腾讯互动直播给app里的用户或者群组push消息。也可以调用腾讯互动直播rest接口做推流和录制的相关操作；
+2. 开播、观看、上麦等音视频接口的调用必须在进房间成功之后；
+3. 只要app业务逻辑允许，在调用相应的接口后，任何用户都有上麦能力；
+4. 开发者后台server可以通过腾讯互动直播给app里的用户或者群组push消息。
 
-![腾讯互动直播数据交互](https://mc.qcloudimg.com/static/img/d1a3826d6a0dbea846c48ce36638c9e3/hudongzhibo.png)
+![腾讯互动直播数据交互](https://mc.qcloudimg.com/static/img/4094feaf383cf1e3c5714bd3f9dbfc8e/hudongzhibo.png)
+
+### 互动直播代码结构说明
+1. iLive SDK封装了之前诸多SDK的接口，统一提供基础的账户、消息和音视频能力；
+2. 为了方便开发者使用，我们在iLive SDK基础上，包装了互动直播常用的业务逻辑，提供了互动直播framework。推荐开发者直接在互动直播framework基础上进行开发；
+3. 在互动直播framework基础上，我们又提供了一个demo app，叫随心播。便于开发者直接体验和演示互动直播的场景功能；
+![腾讯互动直播代码结构](https://mc.qcloudimg.com/static/img/554760f1a135b59da9a6f328be86899a/client.png)
+

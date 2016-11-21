@@ -12,16 +12,16 @@
 #### [扣费和欠费](https://www.qcloud.com/doc/product/268/3166)
 
 ## 集成开发
-### [了解系统架构](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Architecture.md)
-### Android端集成
-####1. 运行随心播
-####2. 直播
-####3. 互动消息和上麦
-
-
 ## 开发预备
+### [了解系统架构](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Architecture.md)
 ### [快速参数配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/fastConfig.md)
-### [准备业务后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/serverInit.md)
+### [缺代码下载地址 准备业务后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/serverInit.md)
+
+### Android端集成
+####1. 运行随心播(缺类库单独下载地址)
+####2. 直播接口
+####3. 互动消息和上麦接口
+
 
 ## 终端集成
 ### Android端集成
@@ -81,7 +81,7 @@
 ### [画面对焦](./focus.md)
 
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
-### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
+### 在线人数
 
 
 ## 运营相关
