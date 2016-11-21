@@ -1,7 +1,7 @@
 #iLiveSDK直播基础接口简介
 ##简单直播流程示例
 
-![](./image/process.png)
+![](http://mc.qcloudimg.com/static/img/d063a1980cc046cafa0444df0b609d02/image.png)
 
 
 ###1 ILiveSDK初始化
@@ -128,7 +128,7 @@ ILiveLoginManager.getInstance().iLiveLogin(ILiveSDK.getInstance().getMyUserId(),
 ###设置渲染层
 > 渲染层级示例图 在界面层xml插入一个AVRootView,音视频数据最终是通过AVRootView渲染出来。考虑多屏互动情况，AVRootView实际上不是一层View而是多层AVVideoView的叠加。直播业务默认主播在第0层默认最大，其他互动观众分别在1，2，3层。每层大小都可以动态调节。
 > 
-![](./image/UiLayers.png)
+![](http://mc.qcloudimg.com/static/img/e6632b362fbc90745505823b1dc295bd/image.png)
 
 * 示例
 
