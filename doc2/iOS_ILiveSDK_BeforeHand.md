@@ -21,7 +21,7 @@
 ## 四 集成到开发者自己的代码工程里
 ### 1 引入SDK 
 
-因GitHub有文件大小限制，现将[SDK](http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip)上传到腾讯云COS上。 更新时，请到对应的地址进行更新，并添加到工程下面对应的目录下。(更新信息暂时放到[ChangeList](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/ChangeList.md)中)
+因GitHub有文件大小限制，现将[SDK](http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip)上传到腾讯云COS上。 更新时，请到对应的地址进行更新，并添加到工程下面对应的目录下。
 
 ### 2 导入项目
 将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
