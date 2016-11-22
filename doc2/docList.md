@@ -15,39 +15,24 @@
 ## 开发预备
 ### [了解系统架构](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Architecture.md)
 ### [快速参数配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/fastConfig.md)
-### [缺代码下载地址 准备业务后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/serverInit.md)
-
-### Android端集成
-####1. 运行随心播(缺类库单独下载地址)
-####2. 直播接口
-####3. 互动消息和上麦接口
-
+### [准备业务后台接口（缺代码下载地址 ）](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/serverInit.md)
 
 ## 终端集成
 ### Android端集成
-1. [准备](./Android_ILiveSDK_BeforeHand.md) <br/>
-	下载sdk<br/>
-	导入项目<br/>
-	修改appid和accounttype<br/>
-	修改后台地址<br/>
-	编译运行<br/>
-2. [直播](./Android_ILiveSDK_Live.md)
-3. [互动消息和上麦](./Android_ILiveSDK_Senior.md)
+1. [下载代码](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_BeforeHand.md)
+2. [直播接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_Live.md)
+3. [互动消息和上麦接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_Senior.md)
 
 ### ios端集成
-1. [准备](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_BeforeHand.md)<br/>
- 	下载sdk<br/>
-	导入项目<br/>
-	修改appid和accounttype<br/>
-	修改后台地址<br/>
-	编译运行<br/>
-2. [直播](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Live.md)
-3. [互动消息和上麦](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Interactive.md)
+1. [下载代码](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_BeforeHand.md)
+2. [直播接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Live.md)
+3. [互动消息和上麦接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Interactive.md)
 
 ### PC端集成
-1. 准备
+1. 下载代码
 2. 直播
 3. 互动消息和上麦
+4. 屏幕分享
 
 
 
@@ -68,20 +53,21 @@
 * [密钥和签名相关](https://www.qcloud.com/doc/product/268/3332)
 
 
-## 后台接口（暂不放出）
-### [后台接口调用格式](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCall.md)
-### [录制的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallRecord.md)
-### [旁路直播的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallPushStream.md)
+
 
 
 ## 常见问题
 ### [流控配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/spearConfig.md)
 ### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
-### [自定义音视频输入流](./custominput.md)
-### [画面对焦](./focus.md)
-
+### [自定义音视频输入流](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/custominput.md)
+### [画面对焦](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/focus.md)
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
-### 在线人数
+### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
 
 
 ## 运营相关
+
+## 后台接口（暂不放出）
+### [后台接口调用格式](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCall.md)
+### [录制的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallRecord.md)
+### [旁路直播的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallPushStream.md)

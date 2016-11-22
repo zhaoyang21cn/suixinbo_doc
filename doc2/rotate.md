@@ -1,6 +1,8 @@
-#腾讯互动直播视频旋转方案
+#互动直播视频旋转方案
 ##前言
-本文用于介绍开发[腾讯互动直播](https://www.qcloud.com/product/ilvb.html)时可选用的三种视频旋转模式。开发前请参考[ILiveSDKAndroidDemos](https://github.com/zhaoyang21cn/ILiveSDK\_Android\_Demos)或者[ILiveSDKiosDemos](https://github.com/zhaoyang21cn/ILiveSDK\_ios\_Demos)，导入ILiveSDK。
+本文用于介绍开发腾讯互动直播时可选用的三种视频旋转模式。开发前请参考
+[ios文档](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_BeforeHand.md)或者
+[Android文档](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_BeforeHand.md)完成基础SDK的导入。
 ##方案详细介绍
 ###方案一：智能旋转模式
 ####简述

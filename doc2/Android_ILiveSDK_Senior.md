@@ -202,7 +202,3 @@ ILVLiveManager.getInstance().downToNorMember(ILVLiveConstants.NORMAL_MEMBER_AUTH
                             }
                         });
 ```
-<br/>
-* 附随心播上麦流程参考
-
-![](http://mc.qcloudimg.com/static/img/b05d09e13c41f12279a4b69e877decfb/image.png)
