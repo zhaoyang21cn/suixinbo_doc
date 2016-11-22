@@ -1,4 +1,4 @@
-#iLiveSDK直播基础接口简介
+#ILiveSDK直播基础接口简介
 ##简单直播流程示例
 
 ![](http://mc.qcloudimg.com/static/img/e6632b362fbc90745505823b1dc295bd/image.png)
