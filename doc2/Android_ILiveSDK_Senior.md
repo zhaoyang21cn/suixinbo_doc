@@ -72,7 +72,7 @@
 *  **特别注意 为了方便用户自定义信令 iLiveSDk保留了一个自定义区域**<br/>
 ```java    
     public static final int ILVLIVE_CMD_CUSTOM_LOW_LIMIT = 0x800;          //自定义消息段下限
-    public static final int ILVLIVE_CMD_CUSTOM_UP_LIMIT = 0x900;          //自定义消息段上线
+    public static final int ILVLIVE_CMD_CUSTOM_UP_LIMIT = 0x900;          //自定义消息段上限
 ```
 
 
