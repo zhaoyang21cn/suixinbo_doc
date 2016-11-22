@@ -17,32 +17,17 @@
 ### [快速参数配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/fastConfig.md)
 ### [缺代码下载地址 准备业务后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/serverInit.md)
 
-### Android端集成
-####1. 运行随心播(缺类库单独下载地址)
-####2. 直播接口
-####3. 互动消息和上麦接口
-
-
 ## 终端集成
 ### Android端集成
-1. [准备](./Android_ILiveSDK_BeforeHand.md) <br/>
-	下载sdk<br/>
-	导入项目<br/>
-	修改appid和accounttype<br/>
-	修改后台地址<br/>
-	编译运行<br/>
-2. [直播](./Android_ILiveSDK_Live.md)
-3. [互动消息和上麦](./Android_ILiveSDK_Senior.md)
+####1. [获取SDK和Demo(缺类库单独下载地址)](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_BeforeHand.md)
+####2. [直播接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_Live.md)
+####3. [互动消息和上麦接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_Senior.md)
+
 
 ### ios端集成
-1. [准备](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/%E9%9A%8F%E5%BF%83%E6%92%AD/iOS%E9%9A%8F%E5%BF%83%E6%92%AD%E9%9B%86%E6%88%90/beforeHand.md)<br/>
- 	下载sdk<br/>
-	导入项目<br/>
-	修改appid和accounttype<br/>
-	修改后台地址<br/>
-	编译运行<br/>
-2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E7%9B%B4%E6%92%AD.md)
-3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E4%BA%92%E5%8A%A8%E6%B6%88%E6%81%AF%E5%92%8C%E4%B8%8A%E9%BA%A6.md)
+####1. [获取SDK和Demo](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_BeforeHand.md)
+####2. [直播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E7%9B%B4%E6%92%AD.md)
+####3. [互动消息和上麦](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/blob/master/doc/TILLiveSDK_%E4%BA%92%E5%8A%A8%E6%B6%88%E6%81%AF%E5%92%8C%E4%B8%8A%E9%BA%A6.md)
 
 ### PC端集成
 1. 准备

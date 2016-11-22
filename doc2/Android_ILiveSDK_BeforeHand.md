@@ -1,10 +1,8 @@
-## 一 下载代码
+## 一 下载Demo
 点击下载[Android Demo](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos)的代码。代码里包含两个示例：<br/>
 
-1. tdemolive目录下是一个最简单的互动直播示例，演示了最关键的几个接口的调用。
+1. tdemolive目录下是一个最简单的互动直播示例，演示了最关键的几个接口的调用。使用方法可以参考github上的说明。
 2. 随心播代码在suixinbo目录下。演示了包括界面和后台交互的完整的直播流程。
-
-#### 后面的文档以随心播为基础。
 
 ## 二 修改配置
 
@@ -17,8 +15,8 @@
 ## 三 运行
 编译运行工程，在启动界面选择随心播。
 
-* ![直播节目](https://mc.qcloudimg.com/static/img/1be6185cdb0f61756c85e230a9fc0514/2.png)
-* ![主界面](https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png)
+* ![主界面](https://mc.qcloudimg.com/static/img/1be6185cdb0f61756c85e230a9fc0514/2.png)
+* ![直播界面](https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png)
 
 
 ## 四 集成到开发者自己的代码工程里
