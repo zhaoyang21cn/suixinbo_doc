@@ -22,5 +22,7 @@
 1. iLive SDK封装了之前诸多SDK的接口，统一提供基础的账户、消息和音视频能力；
 2. 为了方便开发者使用，我们在iLive SDK基础上，包装了互动直播常用的业务逻辑，提供了互动直播framework。推荐开发者直接在互动直播framework基础上进行开发；
 3. 在互动直播framework基础上，我们又提供了一个demo app，叫随心播。便于开发者直接体验和演示互动直播的场景功能；
+
+
 ![腾讯互动直播代码结构](https://mc.qcloudimg.com/static/img/554760f1a135b59da9a6f328be86899a/client.png)
 

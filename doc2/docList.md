@@ -28,11 +28,16 @@
 2. [直播接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Live.md)
 3. [互动消息和上麦接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Interactive.md)
 
-### PC端集成
+### PC端集成(还要集成旧版)
 1. 下载代码
 2. 直播
 3. 互动消息和上麦
 4. 屏幕分享
+
+### web端集成
+1. [web端观看](https://www.qcloud.com/doc/api/258/5704)
+2. web消息互动
+3. 微信分享
 
 
 
@@ -43,7 +48,6 @@
 ## 重要概念
 
 ### [DC与OC的分配和切换](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/oddc.md)
-### [音视频权限管理](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/enterRoomParam.md)
 
 ### 账号登录集成
 * [账号登录集成说明](https://www.qcloud.com/doc/product/268/3328)
@@ -53,15 +57,13 @@
 * [密钥和签名相关](https://www.qcloud.com/doc/product/268/3332)
 
 
-
-
-
 ## 常见问题
 ### [流控配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/spearConfig.md)
 ### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
 ### [自定义音视频输入流](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/custominput.md)
 ### [画面对焦](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/focus.md)
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
+### [直播被中断事件的处理](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/breakEvent.md)
 ### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
 
 
