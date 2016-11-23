@@ -17,7 +17,7 @@ option.classId(Integer.parseInt(classId))
     .waterMark(watermarkCheckBox.isChecked());
 ```
 
-* 推流参数：ILiveRecordOption
+* 录制参数：ILiveRecordOption
 
 字段名|字段类型|默认值|说明
 :--:|:--:|:--:|:--:
@@ -87,7 +87,7 @@ option.avSdkType = sdkType;
 option.recordType = recordType;
 ```
 
-* 推流参数：ILiveRecordOption
+* 录制参数：ILiveRecordOption
 
 字段名|字段类型|默认值|说明
 :--:|:--:|:--:|:--:
