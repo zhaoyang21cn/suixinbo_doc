@@ -12,6 +12,20 @@ option.channelName("新随心播推流");
 option.encode(TIMAvManager.StreamEncode.RTMP);
 ```
 
+* 推流参数：ILivePushOption
+
+字段名|字段类型|默认值|说明
+:--:|:--:|:--:|:--:
+channelName|String|可选|设置频道名称
+channelDesc|String|可选|设置频道描述
+channelPassword|String|可选|设置频道播放密码
+record|boolean|NO|是否同时开启录制
+waterMark|boolean|NO|是否开启水印
+waterMarkId|long|可选|水印id
+sdkType|TIMAvManager.SDKType|可选|设置当前sdk类型
+rateType|TIMAvManager.RateType|原始码率|支持的码率
+encode|TIMAvManager.StreamEncode|RTMP|设置推流编码类型
+
 ######2. 开始旁路推流
 
 ```
@@ -34,7 +48,7 @@ ILiveRoomManager.getInstance().startPushStream(option, new ILiveCallBack<TIMAvMa
 ##### 结束旁路直播
 
 ```
-ILiveRoomManager.getInstance().stopPushStream(streamChannelID, new ILiveCallBack() {
+ILiveRoomManager.getInstance().stopPushStream(streamChannelIDs, new ILiveCallBack() {
         @Override
         public void onSuccess(Object data) {
             //停止旁路推流成功
@@ -47,6 +61,9 @@ ILiveRoomManager.getInstance().stopPushStream(streamChannelID, new ILiveCallBack
 });
 ```
 
+参数名|参数类型|说明
+:--:|:--:|:--:
+ids|List<Long>|要停止推流的频道ID数组
 
 #### ios
 ##### 开始旁路直播
@@ -67,8 +84,8 @@ option.sdkType = sdkType;
 channelInfo|ChannelInfo|必填|旁路直播频道信息
 record|BOOL|NO|是否同时开启录制
 waterMark|BOOL|NO|是否开启水印
-waterMarkId|uint32_t|0|水印id
-sdkType|AVSDKType|必填|SDK业务类型
+waterMarkId|uint32_t|可选|水印id
+sdkType|AVSDKType|可选|SDK业务类型
 rateType|AVRateType|原始码率|支持的码率
 encodeType|AVEncodeType|必填|编码格式
 
