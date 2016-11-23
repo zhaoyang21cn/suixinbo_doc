@@ -36,8 +36,7 @@
 
 ### web端集成
 1. [web端观看](https://www.qcloud.com/doc/api/258/5704)
-2. web消息互动
-3. 微信分享
+2. [web消息互动](https://www.qcloud.com/doc/product/269/1594)
 
 
 
