@@ -1,4 +1,4 @@
-## 旁路直播
+﻿## 旁路直播
 旁路直播功能可以把互动直播上行的数据转码成通用格式进行推流分发，以方便用户通过Web或流媒体播放器观看。<br/><br/>
 **使用旁路直播功能前，请先在控制台开通腾讯云直播服务，否则将无法使用**。
 
@@ -8,7 +8,80 @@
 ##### 结束旁路直播
 #### ios
 ##### 开始旁路直播
+######1. 设置推流参数
+```
+ILivePushOption *option = [[ILivePushOption alloc] init];
+ChannelInfo *info = [[ChannelInfo alloc] init];
+info.channelName = @"新随心播推流";
+info.channelDesc = @"新随心播推流描述测试文本";
+option.channelInfo = info;
+option.encodeType = encodeType;
+option.sdkType = sdkType;
+```
+* 推流参数：ILivePushOption
+
+字段名|字段类型|默认值|说明
+:--:|:--:|:--:|:--:
+channelInfo|ChannelInfo|必填|旁路直播频道信息
+record|BOOL|NO|是否同时开启录制
+waterMark|BOOL|NO|是否开启水印
+waterMarkId|uint32_t|0|水印id
+sdkType|AVSDKType|必填|SDK业务类型
+rateType|AVRateType|原始码率|支持的码率
+encodeType|AVEncodeType|必填|编码格式
+
+
+* 频道参数：ChannelInfo
+
+字段名|字段类型|默认值|说明
+:--:|:--:|:--:|:--:
+channelName|NSString|必填|直播频道的名称
+channelDesc|NSString|可选|直播频道的描述
+channelPassword|NSString|可选|为接收方播放器设置的密码
+
+######2. 开始旁路推流
+
+```
+[[ILiveRoomManager getInstance] startPushStream:option succ:^(id selfPtr) {
+        AVStreamerResp *resp = (AVStreamerResp *)selfPtr;
+        NSLog(@"频道的ID=%d,AVLiveUrl列表=%@",resp.channelID,resp.urls);
+    } failed:^(NSString *module, int errId, NSString *errMsg) {
+        NSLog(@"推流失败");
+    }];
+```
+
+* 回调结果：AVStreamerResp
+
+字段名|字段类型|说明
+:--:|:--:|:--:
+channelID|UInt64|创建频道的ID
+urls|NSArray|AVLiveUrl列表
+recordTaskId|uint32_t|录制任务id
+
+
+* URL参数：AVLiveUrl
+
+字段名|字段类型|说明
+:--:|:--:|:--:
+type|AVEncodeType|编码格式
+playUrl|NSString|播放url
+rateType|AVRateType|码率
+
+
 ##### 结束旁路直播
+
+```
+[[ILiveRoomManager getInstance] stopPushStreams:@[@(_channelId)] succ:^{
+        NSLog(@"已停止推流");
+    } failed:^(NSString *module, int errId, NSString *errMsg) {
+        NSLog(@"停止推流失败");
+    }];
+```
+参数名|参数类型|说明
+:--:|:--:|:--:
+channelIds|NSArray|要停止推流的频道ID数组
+
+
 #### pc
 ##### 开始旁路直播
 ##### 结束旁路直播
