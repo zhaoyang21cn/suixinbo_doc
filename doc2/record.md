@@ -1,14 +1,131 @@
-## 互动直播录制开发
+﻿## 互动直播录制开发
 录制的文件将存储在腾讯云提供的点播服务上，用户可通过点播的管理控制台、API进行管理、转码、分发等操作。<br/><br/>
 **使用录制功能前，请先在控制台开通腾讯云点播服务，否则将无法使用**。
 
 ### 1 客户端SDK接口
 #### Android
 ##### 开始录制
+######1. 设置录制参数
+
+```
+ILiveRecordOption option = new ILiveRecordOption();
+option.fileName(filename);
+option.addTag(tag);
+option.classId(Integer.parseInt(classId))
+    .transCode(trancodeCheckBox.isChecked())
+    .screenShot(screenshotCheckBox.isChecked())
+    .waterMark(watermarkCheckBox.isChecked());
+```
+
+* 推流参数：ILiveRecordOption
+
+字段名|字段类型|默认值|说明
+:--:|:--:|:--:|:--:
+fileName|String|必填| 录制生成的文件名
+classId|int|必填|视频分类ID
+transCode|boolean|NO|是否转码
+screenShot|boolean|NO|是否截图
+waterMark|boolean|NO|是否打水印
+sdkType|TIMAvManager.SDKType|必填|SDK对应的业务类型
+recordType|AVRecordType|AV_RECORD_TYPE_VIDEO|录制类型
+
+方法名|参数|说明
+:--:|:--:|:--:
+addTag|String|添加视频标签
+
+######2. 开始录制
+
+```
+ILiveRoomManager.getInstance().startRecordVideo(option, new ILiveCallBack() {
+        @Override
+        public void onSuccess(Object data) {
+            //开始录制成功
+        }
+
+        @Override
+        public void onError(String module, int errCode, String errMsg) {
+            //开始录制失败
+        }
+    });
+```
+
 ##### 结束录制
+
+```
+ILiveRoomManager.getInstance().stopRecordVideo(new ILiveCallBack<List<String>>() {
+        @Override
+        public void onSuccess(List<String> data) {
+            //停止录制成功
+            for (String url : data){
+                //文件id
+            }
+        }
+
+        @Override
+        public void onError(String module, int errCode, String errMsg) {
+            //停止录制失败
+        }
+    });
+```
+
+Android录制功能的详细实现见[新随心播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos)
+
 #### ios
 ##### 开始录制
+######1. 设置录制参数
+
+```
+ILiveRecordOption *option = [[ILiveRecordOption alloc] init];
+option.fileName = @"新随心播录制文件";
+option.tags = tags;
+option.classId = [tag intValue];
+option.isTransCode = NO;
+option.isScreenShot = NO;
+option.isWaterMark = NO;
+option.isScreenShot = NO;
+option.avSdkType = sdkType;
+option.recordType = recordType;
+```
+
+* 推流参数：ILiveRecordOption
+
+字段名|字段类型|默认值|说明
+:--:|:--:|:--:|:--:
+fileName|NSString|必填| 录制生成的文件名
+tags|NSArray|必填|视频标签列表
+classId|UInt32|必填|视频分类ID
+isTransCode|BOOL|NO|是否转码
+isScreenShot|BOOL|NO|是否截图
+isWaterMark|BOOL|NO|是否打水印
+sdkType|AVSDKType|必填|SDK对应的业务类型
+recordType|AVRecordType|AV_RECORD_TYPE_VIDEO|录制类型
+
+######2. 开始录制
+
+```
+[[ILiveRoomManager getInstance] startRecordVideo:option succ:^{
+        NSLog(@"已开始录制");
+    } failed:^(NSString *module, int errId, NSString *errMsg) {
+        NSLog(@"开始录制失败");
+    }];
+```
+
 ##### 结束录制
+
+```
+[[ILiveRoomManager getInstance] stopRecordVideo:^(id selfPtr) {
+            NSArray *fileIds = (NSArray *)selfPtr;
+            NSLog(@"已停止录制");
+        } failed:^(NSString *module, int errId, NSString *errMsg) {
+            NSLog(@"停止录制失败");
+        }];
+```
+
+* 回调结果：NSArray
+返回NSString类型的文件Id列表
+
+IOS录制功能的详细实现见[新随心播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)
+
 #### pc
 ##### 开始录制
 ##### 结束录制
