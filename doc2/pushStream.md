@@ -65,6 +65,8 @@ ILiveRoomManager.getInstance().stopPushStream(streamChannelIDs, new ILiveCallBac
 :--:|:--:|:--:
 ids|List<Long>|要停止推流的频道ID数组
 
+Android旁路直播功能的详细实现见[新随心播](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos)
+
 #### ios
 ##### 开始旁路直播
 ######1. 设置推流参数
@@ -140,6 +142,7 @@ rateType|AVRateType|码率
 :--:|:--:|:--:
 channelIds|NSArray|要停止推流的频道ID数组
 
+IOS旁路直播功能的详细实现见[新随心播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)
 
 #### pc
 ##### 开始旁路直播
