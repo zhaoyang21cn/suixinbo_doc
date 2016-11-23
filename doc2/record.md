@@ -121,8 +121,7 @@ recordType|AVRecordType|AV_RECORD_TYPE_VIDEO|录制类型
         }];
 ```
 
-* 回调结果：NSArray
-返回NSString类型的文件Id列表
+* 回调结果：NSArray（返回NSString类型的文件Id列表）
 
 IOS录制功能的详细实现见[新随心播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)
 
