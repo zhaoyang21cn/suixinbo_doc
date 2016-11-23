@@ -5,7 +5,49 @@
 ### 1 客户端SDK接口
 #### Android
 ##### 开始旁路直播
+######1. 设置推流参数
+```
+ILivePushOption option = new ILivePushOption();
+option.channelName("新随心播推流");
+option.encode(TIMAvManager.StreamEncode.RTMP);
+```
+
+######2. 开始旁路推流
+
+```
+ILiveRoomManager.getInstance().startPushStream(option, new ILiveCallBack<TIMAvManager.StreamRes>() {
+        @Override
+        public void onSuccess(TIMAvManager.StreamRes data) {
+            //旁路推流成功
+            List<TIMAvManager.LiveUrl> liveUrls = data.getUrls();
+            streamChannelID = data.getChnlId();
+        }
+
+        @Override
+        public void onError(String module, int errCode, String errMsg) {
+            //旁路推流失败
+        }
+});
+```
+
+
 ##### 结束旁路直播
+
+```
+ILiveRoomManager.getInstance().stopPushStream(streamChannelID, new ILiveCallBack() {
+        @Override
+        public void onSuccess(Object data) {
+            //停止旁路推流成功
+        }
+
+        @Override
+        public void onError(String module, int errCode, String errMsg) {
+            //停止旁路推流失败
+        }
+});
+```
+
+
 #### ios
 ##### 开始旁路直播
 ######1. 设置推流参数
