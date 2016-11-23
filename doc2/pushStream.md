@@ -6,7 +6,7 @@
 #### Android
 ##### 开始旁路直播
 ######1. 设置推流参数
-```
+```objective-c
 ILivePushOption option = new ILivePushOption();
 option.channelName("新随心播推流");
 option.encode(TIMAvManager.StreamEncode.RTMP);
