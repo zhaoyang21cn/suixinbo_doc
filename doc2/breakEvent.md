@@ -47,7 +47,7 @@ ILiveSDK内部设置保活模式，不会锁屏
 ### 五、无网络
 在网络中断时，SDK内部会尝试重连，用户可自行监控系统网络状态
 
-如需了解SDK内部上下行流量，可参考[ILiveQualityData](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/quality.md)
+如需了解SDK内部网络状态，可参考[ILiveQualityData](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/quality.md)
 如房间超过90秒没有上行数据，音视频房间会被回收，会上抛onRoomDisconnect事件
 
 ### 六、app crash
