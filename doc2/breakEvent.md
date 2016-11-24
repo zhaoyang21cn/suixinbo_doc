@@ -11,7 +11,7 @@
 ### 一、来电话
 无需做任何处理
 
-来电话时，来电界面会覆盖当前直播界面，参考切后处理
+来电话时，来电界面会覆盖当前直播界面，参考切后台处理
 
 ### 二、音频中断
 无需做任何处理
@@ -40,14 +40,15 @@ iOS分两种情况:
 
 ### 四、锁屏
 #### Android
-同切后台，应用可以设置保活模式，避免锁屏
+同切后台，用户可以在应用中自行设置保活模式，避免锁屏
 #### iOS
-ILiveSDK内部设置保活模式，不会锁屏
+ILiveSDK内部设置保活模式，不会锁屏(进入房间保活，退出房间不保活)
 
 ### 五、断网
 在网络中断时，SDK内部会尝试重连，用户可自行监控系统网络状态
 
 如需了解SDK内部网络状态，可参考[ILiveQualityData](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/quality.md)
+
 如房间超过90秒没有上行数据，音视频房间会被回收，会上抛onRoomDisconnect事件
 
 ### 六、app crash
