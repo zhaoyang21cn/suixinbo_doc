@@ -44,7 +44,7 @@ iOS分两种情况:
 #### iOS
 ILiveSDK内部设置保活模式，不会锁屏
 
-### 五、无网络
+### 五、断网
 在网络中断时，SDK内部会尝试重连，用户可自行监控系统网络状态
 
 如需了解SDK内部网络状态，可参考[ILiveQualityData](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/quality.md)
@@ -53,7 +53,7 @@ ILiveSDK内部设置保活模式，不会锁屏
 ### 六、app crash
 ILiveSDK内置了[bugly上报](https://bugly.qq.com/v2/)
 
-### 七、多终端登录被踢
+### 七、被踢
 多终端登录时，会收到被踢事件，此时建议用户重新登陆(如果恢复需自己记录状态)
 #### Android
 可以在ILiveLoginManager类调用setUserStatusListener监听强制下线事件通知
