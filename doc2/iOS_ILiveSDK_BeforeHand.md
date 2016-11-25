@@ -10,14 +10,10 @@
 Frameworks目录
 
   ![Frameworks目录](http://mc.qcloudimg.com/static/img/139b6e97a13c9274c7371a6af6a0a530/image.png)
-
-AVSDK目录
-
-![AVSDK目录](http://mc.qcloudimg.com/static/img/73d52880bdd252174f75e964b7d9c8eb/image.png)
-
-IMSDK目录
-
-![IMSDK目录](http://mc.qcloudimg.com/static/img/819ee738975ccf61b510a58a9469b4ea/image.png)
+  AVSDK目录
+  ![AVSDK目录](http://mc.qcloudimg.com/static/img/73d52880bdd252174f75e964b7d9c8eb/image.png)
+  IMSDK目录
+  ![IMSDK目录](http://mc.qcloudimg.com/static/img/819ee738975ccf61b510a58a9469b4ea/image.png)
 
 * 导入Frameworks
 将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
