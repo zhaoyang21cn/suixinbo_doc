@@ -1,4 +1,4 @@
-## 直播中断事件的处理
+﻿## 直播中断事件的处理
 在直播过程中，经常会遇到突发事件导致直播被中断。这里列举一些常见事件的处理方式供开发者参考：
 >* 来电话
 >* 音频中断
@@ -61,11 +61,44 @@ ILiveSDK内置了[bugly上报](https://bugly.qq.com/v2/)，可以方便用户迅
 
 ### 七、被踢
 多终端登录时，会收到被踢事件，此时建议用户重新登陆(如果恢复需自己记录状态)
+
 #### Android
 可以在ILiveLoginManager类调用setUserStatusListener监听强制下线事件通知
 
 ```java
 public interface TILVBStatusListener {
     void onForceOffline(int error, String message);
+}
+```
+
+#### IOS
+
+##### 1. 设置用户状态监听
+```
+//设置用户状态监听
+[[ILiveSDK getInstance] setUserStatusListener:[[LiveUserStatusListener alloc] init]];
+```
+
+```
+//用户状态监听类
+@interface LiveUserStatusListener : NSObject <TIMUserStatusListener>
+@end
+
+@implementation LiveUserStatusListener
+//被踢
+- (void)onForceOffline{
+}
+//票据过期
+- (void)onUserSigExpired{
+}
+```
+##### 2. 回调中处理业务逻辑
+```
+- (void)onForceOffline{
+    //被踢下线（以下处理逻辑可做参考，具体可由自身业务决定）
+    //1、如果未处于直播间，可跳转到用户登录界面
+    //2、如果处于直播间
+    //（1）保存直播状态信息，如房间id，房间标题等并退出直播间
+    //（2）重新登录后，根据直播状态信息恢复（进入）直播间
 }
 ```
