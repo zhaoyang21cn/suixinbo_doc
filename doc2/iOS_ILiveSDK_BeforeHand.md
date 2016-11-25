@@ -2,32 +2,55 @@
 点击下载[iOS Demo](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)的代码。代码里包含两个示例：<br/>
 
 1. tdemolive目录下是一个最简单的互动直播示例，演示了最关键的几个接口的调用。使用方法可以参考github上的说明。
-2. 随心播代码在suixinbo目录下。演示了包括界面和后台交互的完整的直播流程。
+2. suixinbo目录下是新版随心播代码。演示了包括界面和后台交互的完整的直播流程。
 
 
-## 二 修改配置
+## 二 修改配置(以下均以随心播配置来说明)
 
-* 把随心播代码中的appid和accountType修改成开发者自己的。<br/>
+* 把随心播代码中的appid和accountType修改成开发者自己的(如果只是体验，可以不改)。<br/>
 在suixinbo/TILLiveSDKShow/ConstHeader.h<br/>
 ![](http://mc.qcloudimg.com/static/img/78f29b400ff3c1eff1546ade73384dda/image.png)
 
-## 三 运行
+* 修改 Bundle Identifier, 随心播工程上的Bundle Identifier在用户真机上可能无法运行，用户重新修改下Bundle Identifier即可(比如在原有id后面加1)
+
+## 三 下载并导入Frameworks
+* [下载ILiveSDK，TILLiveSDK，AVSDK，IMSDK](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)，并解压到工程目录suixinbo/Frameworks 下
+工程最后的目录如下图：
+Frameworks目录
+![Frameworks目录](http://mc.qcloudimg.com/static/img/139b6e97a13c9274c7371a6af6a0a530/image.png)
+AVSDK目录
+![AVSDK目录](http://mc.qcloudimg.com/static/img/73d52880bdd252174f75e964b7d9c8eb/image.png)
+IMSDK目录
+![IMSDK目录](http://mc.qcloudimg.com/static/img/819ee738975ccf61b510a58a9469b4ea/image.png)
+
+* 导入Frameworks
+将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
+![SDK导入工程](http://mc.qcloudimg.com/static/img/7922154e7bdbbd0a6c24756d5b0a8866/image.png)
+
+## 四 运行
 编译运行工程。(如果xcode8编译不过，修改下Bundle Identifier)
 
 * ![主界面](https://mc.qcloudimg.com/static/img/1be6185cdb0f61756c85e230a9fc0514/2.png)
 * ![直播界面](https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png)
 
 
-## 四 集成到开发者自己的代码工程里
-### 1 引入SDK 
+## 五 集成到开发者自己的代码工程里
+### 1 引入SDK并导入项目 
 
-因GitHub有文件大小限制，现将[SDK](http://dldir1.qq.com/hudongzhibo/ILiveSDK/Frameworks.zip)上传到腾讯云COS上。 更新时，请到对应的地址进行更新，并添加到工程下面对应的目录下。
+参照以上 第三步 
 
-### 2 导入项目
+### 2 修改工程配置
 将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
 
-![](http://mc.qcloudimg.com/static/img/03ddb3785250513b0cb7b0fee2380a11/image.png)
+1. Build Settings/Linking/Other Linker Flags，增加 -ObjC 配置，如下图所示：
+![](http://mc.qcloudimg.com/static/img/f473f6c580a4196af7d3d33edf140bdb/image.png)
 
+2. Build Settings/Linking/Bitcode，增加 Bitcode 配置，设置为NO，如下图所示:
+![](http://mc.qcloudimg.com/static/img/f473f6c580a4196af7d3d33edf140bdb/image.png)
+
+3. iOS10及以上系统，需在Info.plist中增加设备访问权限配置
+![](http://mc.qcloudimg.com/static/img/e7b7897cb79a5cb9a984938dd4b3fda3/image.png)
+若上述步骤均无误，则工程编译可以通过了。
 
 ### 3 修改后台地址
 目前随心播后台主要用来维护直播房间列表。如果复用随心播客户端代码，需要修改随心播后台地址为业务方自己部署的服务器地址。 <br />     
@@ -41,10 +64,9 @@
 | LiveHostHeartBeatRequest | 房间心跳 |LiveHostHeartBeatRequest.m|- (NSString *)url |
 | LiveImageSignRequest | 图片上传相关 |LiveImageSignRequest.m|- (NSString *)url |
 
+### 4 添加系统库
+添加以下系统库比较方便的方法是直接从随心播工程中，将SystemLibrarys组拖到自己的工程目录下
 
-### 4 编译运行
-编译需要增加一系列系统库，以及工程配置
-#### 4.1 添加系统库
 |  需要增加的系统库 |
 |------------|
 |libc++.tbd|
@@ -67,21 +89,8 @@
 |CoreTelephony.framework|
 |SystemConfiguration.framework|
 
-#### 4.2 工程配置
-1. Build Settings/Linking/Other Linker Flags，增加 -ObjC 配置，如下图所示：
-![](http://mc.qcloudimg.com/static/img/f473f6c580a4196af7d3d33edf140bdb/image.png)
-
-2. Build Settings/Linking/Bitcode，增加 Bitcode 配置，设置为NO，如下图所示:
-![](http://mc.qcloudimg.com/static/img/f473f6c580a4196af7d3d33edf140bdb/image.png)
-
-3. iOS10及以上系统，需在Info.plist中增加设备访问权限配置
-![](http://mc.qcloudimg.com/static/img/e7b7897cb79a5cb9a984938dd4b3fda3/image.png)
-若上述步骤均无误，则工程编译可以通过了。
-
-## 库类介绍
+## 六 库类介绍
 -----
-从官网下载的SDK只包含一个文件夹Frameworks，里面包含了集成直播业务的所有SDK
-
 |Frameworks文件夹|说明|
 |---|---|
 |AVSDK|包括音视频相关的所有SDK|
