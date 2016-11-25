@@ -29,7 +29,9 @@ Frameworks目录
 * <div align=center>
 <img src="https://mc.qcloudimg.com/static/img/1be6185cdb0f61756c85e230a9fc0514/2.png"/>
 </div>
-* ![直播界面](https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png)
+* <div align=center>
+<img src="https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png"/>
+</div>
 
 
 ## 四 集成到开发者自己的代码工程里
