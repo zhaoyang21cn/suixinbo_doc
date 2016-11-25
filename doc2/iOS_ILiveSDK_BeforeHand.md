@@ -5,39 +5,37 @@
 2. suixinbo目录下是新版随心播代码。演示了包括界面和后台交互的完整的直播流程。
 
 
-## 二 修改配置(以下均以随心播配置来说明)
-
-* 把随心播代码中的appid和accountType修改成开发者自己的(如果只是体验，可以不改)。<br/>
-在suixinbo/TILLiveSDKShow/ConstHeader.h<br/>
-![](http://mc.qcloudimg.com/static/img/78f29b400ff3c1eff1546ade73384dda/image.png)
-
-* 修改 Bundle Identifier, 随心播工程上的Bundle Identifier在用户真机上可能无法运行，用户重新修改下Bundle Identifier即可(比如在原有id后面加1)
-
-## 三 下载并导入Frameworks
+## 二 下载并导入Frameworks
 * [下载ILiveSDK，TILLiveSDK，AVSDK，IMSDK](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)，并解压到工程目录suixinbo/Frameworks 下
 工程最后的目录如下图：
+
 Frameworks目录
+
 ![Frameworks目录](http://mc.qcloudimg.com/static/img/139b6e97a13c9274c7371a6af6a0a530/image.png)
+
 AVSDK目录
+
 ![AVSDK目录](http://mc.qcloudimg.com/static/img/73d52880bdd252174f75e964b7d9c8eb/image.png)
+
 IMSDK目录
+
 ![IMSDK目录](http://mc.qcloudimg.com/static/img/819ee738975ccf61b510a58a9469b4ea/image.png)
 
 * 导入Frameworks
 将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
 ![SDK导入工程](http://mc.qcloudimg.com/static/img/7922154e7bdbbd0a6c24756d5b0a8866/image.png)
 
-## 四 运行
-编译运行工程。(如果xcode8编译不过，修改下Bundle Identifier)
+## 三 运行
+编译运行工程。(如果xcode8编译不过，修改 Bundle Identifier, 随心播工程上的Bundle Identifier在用户真机上可能无法运行，用户重新修改下Bundle Identifier即可，比如在原有id后面加1)
 
 * ![主界面](https://mc.qcloudimg.com/static/img/1be6185cdb0f61756c85e230a9fc0514/2.png)
 * ![直播界面](https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png)
 
 
-## 五 集成到开发者自己的代码工程里
+## 四 集成到开发者自己的代码工程里
 ### 1 引入SDK并导入项目 
 
-参照以上 第三步 
+参照以上 第二步 
 
 ### 2 修改工程配置
 将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
@@ -89,7 +87,7 @@ IMSDK目录
 |CoreTelephony.framework|
 |SystemConfiguration.framework|
 
-## 六 库类介绍
+## 五 库类介绍
 -----
 |Frameworks文件夹|说明|
 |---|---|
