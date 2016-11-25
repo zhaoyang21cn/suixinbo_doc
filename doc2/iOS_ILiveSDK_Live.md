@@ -1,4 +1,5 @@
 # ILiveSDK直播流程图：
+
 ![](http://mc.qcloudimg.com/static/img/06d2fb5027be53492249d4b81bd2f5a5/image.png)
 
 
