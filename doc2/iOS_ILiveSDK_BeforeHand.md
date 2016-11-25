@@ -19,8 +19,7 @@ Frameworks目录
   
   ![IMSDK目录](http://mc.qcloudimg.com/static/img/819ee738975ccf61b510a58a9469b4ea/image.png)
 
-* 导入Frameworks
-将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
+* 导入Frameworks,将下载好的SDK复制到工程目录下，工程目录右键，Add Files to " you projectname",在demo中如下图所示：
 ![SDK导入工程](http://mc.qcloudimg.com/static/img/7922154e7bdbbd0a6c24756d5b0a8866/image.png)
 
 ## 三 运行
