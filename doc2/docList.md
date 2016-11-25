@@ -23,7 +23,7 @@
 2. [直播接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_Live.md)
 3. [互动消息和上麦接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/Android_ILiveSDK_Senior.md)
 
-### ios端集成
+### iOS端集成
 1. [下载代码](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_BeforeHand.md)
 2. [直播接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Live.md)
 3. [互动消息和上麦接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/iOS_ILiveSDK_Interactive.md)
