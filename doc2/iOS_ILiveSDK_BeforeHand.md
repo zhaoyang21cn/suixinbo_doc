@@ -6,9 +6,7 @@
 
 
 ## 二 下载并导入Frameworks
-* [下载ILiveSDK，TILLiveSDK，AVSDK，IMSDK](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)，并解压到工程目录suixinbo/Frameworks 下
-工程最后的目录如下图：
-
+* [下载ILiveSDK，TILLiveSDK，AVSDK，IMSDK](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)，并解压到工程目录suixinbo/Frameworks 下,工程最后的目录如下图：
 Frameworks目录
 
 ![Frameworks目录](http://mc.qcloudimg.com/static/img/139b6e97a13c9274c7371a6af6a0a530/image.png)
