@@ -271,7 +271,7 @@ ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.leng
 * 示例：
 
 ```
-    QAVVideoCtrl *videoCtrl = [ILiveSDK.getInstance().getAvVideoCtrl() videoCtrl];
+    QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
     [videoCtrl enableExternalCapture:YES];
 ```
 
@@ -300,7 +300,7 @@ ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.leng
 *示例：
 
 ```
-    QAVVideoCtrl *videoCtrl = [ILiveSDK.getInstance().getAvVideoCtrl() videoCtrl];
+    QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
     QAVResult result = [videoCtrl fillExternalCaptureFrame:frame];
 ```
 
