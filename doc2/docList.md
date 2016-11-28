@@ -65,10 +65,3 @@
 ### [直播被中断事件的处理](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/breakEvent.md)
 ### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
 
-
-## 运营相关
-
-## 后台接口（暂不放出）
-### [后台接口调用格式](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCall.md)
-### [录制的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallRecord.md)
-### [旁路直播的后台接口](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/restCallPushStream.md)
