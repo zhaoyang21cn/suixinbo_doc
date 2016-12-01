@@ -7,20 +7,26 @@
 
 
 * ios
+
+
 #####获取IM管理器实例
+
 ```
 TIMManager *imManager = [[ILiveSDK getInstance] getTIMManager];
 ```
+
 查看IMSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/269/1565)
 
 #####获取AV上下文实例
+
 ```
 QAVContext *avContext = [[ILiveSDK getInstance] getAVContext];
 ```
+
 查看AVSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/268/3824)
 
 
-*注意事项：*请在ILiveSDK初始化并登录后再使用以上接口。
+**注意事项：**请在ILiveSDK初始化并登录后再使用以上接口。
 
 
 ## 您是壕不差钱现在就是要快快快上线产品？
