@@ -17,4 +17,4 @@
 5. 踢人和中断主播；
 
 ### 附录
-* 如果开发者想研究一下独立账户模式的server开发，可以研究[账号登录集成说明](https://www.qcloud.com/doc/product/268/3328)。
+* [TLS账号登录集成说明](https://www.qcloud.com/doc/product/268/3328)。
