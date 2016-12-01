@@ -1,4 +1,4 @@
-﻿## 互动直播录制开发
+## 互动直播录制开发
 录制的文件将存储在腾讯云提供的点播服务上，用户可通过点播的管理控制台、API进行管理、转码、分发等操作。<br/><br/>
 **使用录制功能前，请先在控制台开通腾讯云点播服务，否则将无法使用**。
 
@@ -124,10 +124,6 @@ recordType|AVRecordType|AV_RECORD_TYPE_VIDEO|录制类型
 * 回调结果：NSArray（返回NSString类型的文件Id列表）
 
 IOS录制功能的详细实现见[新随心播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos)
-
-#### pc
-##### 开始录制
-##### 结束录制
 
 ### 2 视频管理
 
