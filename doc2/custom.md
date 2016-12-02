@@ -5,6 +5,21 @@
 
 * Android
 
+#####获取IM管理器实例
+
+```
+TIMManager imManager = ILiveSDK.getTIMManager();
+```
+
+查看Android IMSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/269/1557)
+
+#####获取AV上下文实例
+
+```
+AVContext avContext = ILiveSDK.getAVContext();
+```
+
+查看Android AVSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/268/3823)
 
 * ios
 
@@ -15,7 +30,7 @@
 TIMManager *imManager = [[ILiveSDK getInstance] getTIMManager];
 ```
 
-查看IMSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/269/1565)
+查看IOS IMSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/269/1565)
 
 #####获取AV上下文实例
 
@@ -23,7 +38,7 @@ TIMManager *imManager = [[ILiveSDK getInstance] getTIMManager];
 QAVContext *avContext = [[ILiveSDK getInstance] getAVContext];
 ```
 
-查看AVSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/268/3824)
+查看IOS AVSDK接口的详细信息请点击[这里](https://www.qcloud.com/document/product/268/3824)
 
 
 **注意事项：**请在ILiveSDK初始化并登录后再使用以上接口。
