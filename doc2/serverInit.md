@@ -18,3 +18,4 @@
 
 ### 附录
 * [TLS账号登录集成说明](https://www.qcloud.com/doc/product/268/3328)。
+* 独立模式server demo下载地址(准备中......)
