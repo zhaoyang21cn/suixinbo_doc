@@ -1,3 +1,15 @@
+## `iLive SDK_Android 1.0.0 2016-12-02
+* 分离ILiveSDK的Core与business层(ILiveSDK=>ILiveSDK + CallSDK + LiveSDK)
+* 添加事件上报 添加关键日志输出
+* 优化日志(统一输出到/tencent/imsdklogs/包名)
+* 重新实现摄像头对焦功能
+* 在Room类新增质量数据获取接口(getQualityData)
+* 默认改为全屏模式
+* 优化登录模块 增加独立模式示例
+* 调整新信令
+* 添加支持多人视频模式
+* 接口调整与IOS保持同步
+
 ## `iLive SDK 1.0.0 2016-11-25`
 * 封装了avsdk和imsdk在直播场景的主要操作，大幅度降低了接入难度
 * 抽取了直播业务逻辑作为framework，便于用户引用和扩展
