@@ -1,4 +1,4 @@
-## `iLive SDK_Android 1.0.0 2016-12-02
+## `iLive SDK_Android 1.0.2 2016-12-02`
 * 分离ILiveSDK的Core与business层(ILiveSDK=>ILiveSDK + CallSDK + LiveSDK)
 * 添加事件上报 添加关键日志输出
 * 优化日志(统一输出到/tencent/imsdklogs/包名)
