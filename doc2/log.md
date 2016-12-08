@@ -15,4 +15,4 @@
 
 ### [Android](https://github.com/zhaoyang21cn/ILiveSDK_Android_Demos/blob/master/doc/ILiveSDK/Logs.md)
 
-### ios
+### [ios](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/log_ios.md)
