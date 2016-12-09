@@ -8,7 +8,7 @@
 
 * 具体包括以下几个步骤
 
-```
+```C
 1. 初始化SDK
 ILiveSDK:Key_Procedure|initSdk|succ
 
@@ -56,7 +56,7 @@ ILiveRoom:Key_Procedure|deleteIMGroup|succ
 ![](http://mc.qcloudimg.com/static/img/54b586d5fa373c5f1c359d624bf4557a/image.png)
 
 * 具体包括以下几个步骤
-```
+```C
 1. 初始化SDK
 ILiveSDK:Key_Procedure|initSdk|succ
 
