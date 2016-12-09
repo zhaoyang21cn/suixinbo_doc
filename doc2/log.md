@@ -1,4 +1,4 @@
-## 日志说明
+﻿## 日志说明
 
 在程序运行的时候，会把关键信息写入日志中。<br/>
 这些信息是查问题的重要帮助，不建议开发者在任何情况下关闭这些日志。
@@ -9,7 +9,11 @@
 
 ### Android
 
+tencent/imsdklogs/com(cn)/公司包名/imsdk_YYYYMMDD.log
+
 ### ios
+
+Library/Caches/imsdk_YYYMMDD.log
 
 ## 日志样式
 
