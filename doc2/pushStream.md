@@ -22,7 +22,7 @@ channelPassword|String|可选|设置频道播放密码
 record|boolean|NO|是否同时开启录制
 waterMark|boolean|NO|是否开启水印
 waterMarkId|long|可选|水印id
-sdkType|TIMAvManager.SDKType|可选（当前版本只支持Normal）|设置当前sdk类型
+sdkType|TIMAvManager.SDKType|可选（当前版本请选Normal）|设置当前sdk类型
 rateType|TIMAvManager.RateType|原始码率|支持的码率
 encode|TIMAvManager.StreamEncode|RTMP|设置推流编码类型
 
@@ -87,7 +87,7 @@ channelInfo|ChannelInfo|必填|旁路直播频道信息
 record|BOOL|NO|是否同时开启录制
 waterMark|BOOL|NO|是否开启水印
 waterMarkId|uint32_t|可选|水印id
-sdkType|AVSDKType|可选（当前版本只支持AVSDK_TYPE_NORMAL）|SDK业务类型
+sdkType|AVSDKType|可选（当前版本请选AVSDK_TYPE_NORMAL）|SDK业务类型
 rateType|AVRateType|原始码率|支持的码率
 encodeType|AVEncodeType|必填|编码格式
 
