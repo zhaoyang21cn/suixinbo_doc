@@ -40,7 +40,7 @@
 
 ### [旁路直播](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/pushStream.md)
 ### [录制](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/record.md)
-
+### [截图和鉴黄](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/%E6%88%AA%E5%9B%BE%E5%92%8C%E9%89%B4%E9%BB%84.md)
 ## 重要概念
 
 ### [DC与OC的分配和切换](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/ocdc.md)
@@ -63,6 +63,7 @@
 ### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
 ### [功能定制](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/custom.md)
 ### [日志说明](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/log.md)
+### [AVSDK1.8.4转置方案升级指引](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/AVSDK%201.8.4%E8%BD%AC%E7%BD%AE%E5%8A%9F%E8%83%BD%E5%8D%87%E7%BA%A7%E6%8C%87%E5%8D%97.md)
 
 
 ##运营相关
