@@ -57,6 +57,7 @@
 ### [流控配置](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/spearConfig.md)
 ### [质量监控](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/avmonitor.md)
 ### [自定义音视频输入流](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/custominput.md)
+### [使用第三方App播放背景音乐](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/musicinput.md)
 ### [画面对焦](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/focus.md)
 ### [画面旋转和裁剪](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/rotate.md)
 ### [直播被中断事件的处理](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/breakEvent.md)
