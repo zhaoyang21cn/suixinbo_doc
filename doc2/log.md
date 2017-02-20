@@ -242,7 +242,7 @@ Key_Procedure|iLiveLoginMgr|iLiveLogin()
 Key_Procedure|iLiveRoomMgr|createRoom(). roomid: 10011
 
 5. 打开摄像头
-Key_Procedure|iLiveRoomMgr|openCamera(\\?\usb#vid_046d&pid_082d&mi_00#6&39399a47&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global)
+Key_Procedure|iLiveRoomMgr|openCamera(\\摄像头id)
 
 6. 退出直播间
 Key_Procedure|iLiveRoomMgr|quitRoom()
