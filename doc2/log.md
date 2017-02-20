@@ -221,7 +221,7 @@ ILiveRoom:Key_Procedure|quitIMGroup|succ
 ### PC
 #### 创建房间流程正确LOG如下
 
-![创建房间](https://mc.qcloudimg.com/static/img/5414a351a090e5995fd40f9feda21758/createRoom.jpg)
+![创建房间](https://mc.qcloudimg.com/static/img/8576883ef0ae442bd713654d41c9ab17/createRoom.jpg)
 
 * 具体包括以下几个步骤
 
