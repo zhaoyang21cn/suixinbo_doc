@@ -16,7 +16,6 @@ IMSDK|tencent/imsdklogs/包名/imsdk_YYYYMMDD.log
 AVSDK|tencent/imsdklogs/包名/QAVSDK_YYYYMMDD.log
 
 
-
 ### ios
 
 SDK|目录
@@ -24,6 +23,15 @@ SDK|目录
 iLiveSDK|Library/Caches/ilivesdk_YYYMMDD.log
 IMSDK|Library/Caches/imsdk_YYYMMDD.log
 AVSDK|Library/Caches/QAVSDK_YYYMMDD.log
+
+
+### PC
+
+SDK|目录
+:--:|:--:
+iLiveSDK|程序运行目录/ilivesdk_YYYMMDD.log
+IMSDK|程序运行目录/imsdk_YYYMMDD.log
+AVSDK|程序运行目录/QAVSDK_YYYMMDD.log
 
 
 ## iLive SDK 关键路径的LOG
@@ -209,4 +217,75 @@ ILiveRoom:Key_Procedure|quitIMGroup|start:groupId:9878
 ILiveRoom:Key_Procedure|quitIMGroup|succ
 ```
 
+
+### PC
+#### 创建房间流程正确LOG如下
+
+![创建房间](https://mc.qcloudimg.com/static/img/5414a351a090e5995fd40f9feda21758/createRoom.jpg)
+
+* 具体包括以下几个步骤
+
+```C
+1. 设置各个回调接口
+Key_Procedure|iLiveSDK|SetMessageCallBack() //设置接收消息回调
+Key_Procedure|iLiveSDK|SetForceOfflineCallback()    //设置被踢下线的回调
+Key_Procedure|iLiveRoomMgr|setLocalVideoCallBack()  //设置本地视频处理函数
+Key_Procedure|iLiveRoomMgr|setRemoteVideoCallBack() //设置远程视频处理函数
+
+2. 初始化SDK
+Key_Procedure|iLiveSDK|initSdk(). appid: 1400019352 accoutType: 8970
+
+3. 登录
+Key_Procedure|iLiveLoginMgr|iLiveLogin()
+
+4. 创建直播间
+Key_Procedure|iLiveRoomMgr|createRoom(). roomid: 10011
+
+5. 打开摄像头
+Key_Procedure|iLiveRoomMgr|openCamera(\\?\usb#vid_046d&pid_082d&mi_00#6&39399a47&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global)
+
+6. 退出直播间
+Key_Procedure|iLiveRoomMgr|quitRoom()
+
+7. 登出
+Key_Procedure|iLiveLoginMgr|iLiveLogout()
+
+8. 清理
+Key_Procedure|iLiveSDK|destroy()
+```
+
+#### 加入房间流程正确LOG如下
+
+![加入房间](https://mc.qcloudimg.com/static/img/12698e71a0a83fa99b5b128a9d5d3928/joinRoom.jpg)
+
+* 具体包括以下几个步骤
+
+```C
+1. 设置各个回调接口
+Key_Procedure|iLiveSDK|SetMessageCallBack() //设置接收消息回调
+Key_Procedure|iLiveSDK|SetForceOfflineCallback()    //设置被踢下线的回调
+Key_Procedure|iLiveRoomMgr|setLocalVideoCallBack()  //设置本地视频处理函数
+Key_Procedure|iLiveRoomMgr|setRemoteVideoCallBack() //设置远程视频处理函数
+
+2. 初始化SDK
+Key_Procedure|iLiveSDK|initSdk(). appid: 1400019352 accoutType: 8970
+
+3. 登录
+Key_Procedure|iLiveLoginMgr|iLiveLogin()
+
+4. 加入直播间
+Key_Procedure|iLiveRoomMgr|joinRoom(). roomid: 10014
+
+5. 请求画面
+Key_Procedure|iLiveRoomMgr|requestViewList()
+
+6. 退出直播间
+Key_Procedure|iLiveRoomMgr|quitRoom()
+
+7. 登出
+Key_Procedure|iLiveLoginMgr|iLiveLogout()
+
+8. 清理
+Key_Procedure|iLiveSDK|destroy()
+```
 
