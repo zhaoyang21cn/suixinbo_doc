@@ -71,25 +71,22 @@ Android旁路直播功能的详细实现见[新随心播](https://github.com/zha
 ##### 开始旁路直播
 ######1. 设置推流参数
 ```
+ILiveChannelInfo *info = [[ILiveChannelInfo alloc] init];
+info.channelName = [NSString stringWithFormat:@"新随心播推流_%@",[[ILiveLoginManager getInstance] getLoginId]];
+info.channelDesc = [NSString stringWithFormat:@"新随心播推流描述测试文本"];
+
 ILivePushOption *option = [[ILivePushOption alloc] init];
-ChannelInfo *info = [[ChannelInfo alloc] init];
-info.channelName = @"新随心播推流";
-info.channelDesc = @"新随心播推流描述测试文本";
 option.channelInfo = info;
 option.encodeType = encodeType;
-option.sdkType = sdkType;
+option.recrodFileType = recordType;
 ```
 * 推流参数：ILivePushOption
 
 字段名|字段类型|默认值|说明
 :--:|:--:|:--:|:--:
 channelInfo|ChannelInfo|必填|旁路直播频道信息
-record|BOOL|NO|是否同时开启录制
-waterMark|BOOL|NO|是否开启水印
-waterMarkId|uint32_t|可选|水印id
-sdkType|AVSDKType|可选（当前版本请选AVSDK_TYPE_NORMAL）|SDK业务类型
-rateType|AVRateType|原始码率|支持的码率
 encodeType|AVEncodeType|必填|编码格式
+encodeType|AVRecordFileType|必填|录制文件类型(AV_RECORD_FILE_TYPE_NONE则不录制文件)
 
 
 * 频道参数：ChannelInfo
@@ -98,7 +95,6 @@ encodeType|AVEncodeType|必填|编码格式
 :--:|:--:|:--:|:--:
 channelName|NSString|必填|直播频道的名称
 channelDesc|NSString|可选|直播频道的描述
-channelPassword|NSString|可选|为接收方播放器设置的密码
 
 ######2. 开始旁路推流
 
