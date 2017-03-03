@@ -74,10 +74,6 @@ Android录制功能的详细实现见[新随心播](https://github.com/zhaoyang2
 ```
 ILiveRecordOption *option = [[ILiveRecordOption alloc] init];
 option.fileName = @"新随心播录制文件";
-option.tags = tags;
-option.classId = [tag intValue];
-option.avSdkType = sdkType;
-option.recordType = recordType;
 ```
 
 * 录制参数：ILiveRecordOption
@@ -85,13 +81,14 @@ option.recordType = recordType;
 字段名|字段类型|默认值|说明
 :--:|:--:|:--:|:--:
 fileName|NSString|必填| 录制生成的文件名
-tags|NSArray|必填|视频标签列表
-classId|UInt32|必填(当前版本请填0)|视频分类ID
+recordType|AVRecordType|必填(默认值为AV_RECORD_TYPE_VIDEO)|录制类型
+sdkType|AVSDKType|必填（当前版本请选AVSDK_TYPE_NORMAL，默认值为AVSDK_TYPE_NORMAL）|SDK对应的业务类型
+classId|UInt32|必填(当前版本请填0，默认值为0)|视频分类ID
+tags|NSArray|选填(默认值为nil)|视频标签列表
 isTransCode|BOOL|（暂不支持，默认为NO）|是否转码
 isScreenShot|BOOL|（暂不支持，默认为NO）|是否截图
 isWaterMark|BOOL|（暂不支持，默认为NO）|是否打水印
-sdkType|AVSDKType|必填（当前版本请选AVSDK_TYPE_NORMAL）|SDK对应的业务类型
-recordType|AVRecordType|AV_RECORD_TYPE_VIDEO|录制类型
+
 
 ######2. 开始录制
 
