@@ -30,26 +30,26 @@ RegistAudioDataCompleteCallbackWithByteBuffer|指向App定义的音频数据回�
 
 ```java
 ILiveSDK.getInstance().getAvAudioCtrl().registAudioDataCallbackWithByteBuffer(
-    AVAudioCtrl.AudioDataSourceType.AUDIO_DATA_SOURCE_MIXTOSEND, mAudioDataCompleteCallbackWithByffer);
+AVAudioCtrl.AudioDataSourceType.AUDIO_DATA_SOURCE_MIXTOSEND, mAudioDataCompleteCallbackWithByffer);
 ```
 
 2、添加需要混入的音频数据
 
 ```java
 private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataCompleteCallbackWithByffer = 
-      new AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer() {
-        @Override
-        public int onComplete(AVAudioCtrl.AudioFrameWithByteBuffer audioFrameWithByteBuffer, int srcType) {
-            if (srcType==AudioDataSourceType.AUDIO_DATA_SOURCE_MIXTOSEND) {
-                synchronized (obj){
-                  /*************************************************
-                    将要混入的音频数据写入audioFrameWithByteBuffer中
-                  *************************************************/
-                }
-            }
-            return AVError.AV_OK;
-        }
-    };
+new AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer() {
+@Override
+public int onComplete(AVAudioCtrl.AudioFrameWithByteBuffer audioFrameWithByteBuffer, int srcType) {
+if (srcType==AudioDataSourceType.AUDIO_DATA_SOURCE_MIXTOSEND) {
+synchronized (obj){
+/*************************************************
+将要混入的音频数据写入audioFrameWithByteBuffer中
+*************************************************/
+}
+}
+return AVError.AV_OK;
+}
+};
 ```
 
 ### iOS
@@ -70,12 +70,12 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 2､ 扬声器透传数据：开扬声器端配置，只有自己听到，其他人听不到：以下代码为设置扬声器透传
 
 ```
- // 设置音频处理回调
- [[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataEventDelegate:self];
- 
- // 注意为QAVAudioDataSource_MixToPlay
- [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToPlay];
- [[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToPlay desc:pcmdesc];
+// 设置音频处理回调
+[[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataEventDelegate:self];
+
+// 注意为QAVAudioDataSource_MixToPlay
+[[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_MixToPlay];
+[[[ILiveSDK getInstance] getAVContext].audioCtrl setAudioDataFormat:QAVAudioDataSource_MixToPlay desc:pcmdesc];
 
 ```
 
@@ -84,81 +84,81 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 ```
 - (QAVResult)audioDataComes:(QAVAudioFrame *)audioFrame type:(QAVAudioDataSourceType)type
 {
-    // 主要用于保存直播中的音频数据
-    return QAV_OK;
+// 主要用于保存直播中的音频数据
+return QAV_OK;
 }
 
 - (void)handle:(QAVAudioFrame **)frameRef withPCM:(NSData *)data offset:(NSInteger *)offset
 {
-	// 演示如何将透传的数据添加到QAVAudioFrame
-    const QAVAudioFrame *aFrame = *frameRef;
-    NSInteger off = *offset;
-    NSInteger length = [aFrame.buffer length];
-    if (length)
-    {
-        NSMutableData *pdata = [NSMutableData data];
-        const Byte *btyes = [data bytes];
-        
-        while (pdata.length < length)
-        {
-            if (off + length > data.length)
-            {
-                const Byte *byteOff = btyes + off;
-                [pdata appendBytes:byteOff length:data.length - off];
-                off = 0;
-            }
-            else
-            {
-                const Byte *byteOff = btyes + off;
-                [pdata appendBytes:byteOff length:length];
-                off += length;
-            }
-        }
-        
-        if (pdata.length == length)
-        {
-            *offset = off;
-            
-            const void *abbytes = [aFrame.buffer bytes];
-            memcpy((void *)abbytes, [pdata bytes], length);
-        }
-    }
+// 演示如何将透传的数据添加到QAVAudioFrame
+const QAVAudioFrame *aFrame = *frameRef;
+NSInteger off = *offset;
+NSInteger length = [aFrame.buffer length];
+if (length)
+{
+NSMutableData *pdata = [NSMutableData data];
+const Byte *btyes = [data bytes];
+
+while (pdata.length < length)
+{
+if (off + length > data.length)
+{
+const Byte *byteOff = btyes + off;
+[pdata appendBytes:byteOff length:data.length - off];
+off = 0;
+}
+else
+{
+const Byte *byteOff = btyes + off;
+[pdata appendBytes:byteOff length:length];
+off += length;
+}
+}
+
+if (pdata.length == length)
+{
+*offset = off;
+
+const void *abbytes = [aFrame.buffer bytes];
+memcpy((void *)abbytes, [pdata bytes], length);
+}
+}
 }
 
 - (QAVResult)audioDataShouInput:(QAVAudioFrame *)audioFrame type:(QAVAudioDataSourceType)type
 {
-    // 混音输入（Mic和Speaker）的主要回调
-    
-    // 麦克风透传处理
-    if (type == QAVAudioDataSource_MixToSend)
-    {
-    	// self.micAudioTransmissionData 为要透传的音频数据，默认使用QAVAudioFrameDesc = {48000, 2, 16}，外部传入数据时，注意对应，外部传入的时候，注意相关的参数
-        if (self.micAudioTransmissionData)
-        {
-            NSInteger off = self.micAudioOffset;
-            [self handle:&audioFrame withPCM:self.micAudioTransmissionData offset:&off];
-            self.micAudioOffset = off;
-        }
-    }
-    // 扬声明器透传处理
-    else if (type == QAVAudioDataSource_MixToPlay)
-    {
-    // self.speakerAudioTransmissionData 为要透传的音频数据，默认同样使用QAVAudioFrameDesc = {48000, 2, 16}，外部传入数据时，注意对应，外部传入的时候，注意相关的参数
-        if (self.speakerAudioTransmissionData)
-        {
-            NSInteger off = self.speakerAudioOffset;
-            [self handle:&audioFrame withPCM:self.speakerAudioTransmissionData offset:&off];
-            self.speakerAudioOffset = off;
-        }
-    }
+// 混音输入（Mic和Speaker）的主要回调
+
+// 麦克风透传处理
+if (type == QAVAudioDataSource_MixToSend)
+{
+// self.micAudioTransmissionData 为要透传的音频数据，默认使用QAVAudioFrameDesc = {48000, 2, 16}，外部传入数据时，注意对应，外部传入的时候，注意相关的参数
+if (self.micAudioTransmissionData)
+{
+NSInteger off = self.micAudioOffset;
+[self handle:&audioFrame withPCM:self.micAudioTransmissionData offset:&off];
+self.micAudioOffset = off;
+}
+}
+// 扬声明器透传处理
+else if (type == QAVAudioDataSource_MixToPlay)
+{
+// self.speakerAudioTransmissionData 为要透传的音频数据，默认同样使用QAVAudioFrameDesc = {48000, 2, 16}，外部传入数据时，注意对应，外部传入的时候，注意相关的参数
+if (self.speakerAudioTransmissionData)
+{
+NSInteger off = self.speakerAudioOffset;
+[self handle:&audioFrame withPCM:self.speakerAudioTransmissionData offset:&off];
+self.speakerAudioOffset = off;
+}
+}
 //    NSLog(@"%@", audioFrame.buffer);
-    return QAV_OK;
+return QAV_OK;
 }
 
 - (QAVResult)audioDataDispose:(QAVAudioFrame *)audioFrame type:(QAVAudioDataSourceType)type
 {
-    // 主要用作作变声处理
-    return QAV_OK;
+// 主要用作作变声处理
+return QAV_OK;
 }
 ```
 
@@ -173,15 +173,15 @@ private AVAudioCtrl.RegistAudioDataCompleteCallbackWithByteBuffer mAudioDataComp
 // 或调用AVSDK接口取消不同类型的透传
 // 方法详见QAVSDK.framework中的QAVAudioCtrl
 /*!
- @abstract      反注册音频数据类型的回调
- @discussion    要注册监听的音频数据源类型，具体参考QAVAudioDataSourceType。
- @param         type            要反注册监听的音频数据源类型，具体参考QAVAudioDataSourceType
- @return        成功返回QAV_OK, 其他情况请参照QAVResult。
- @see           QAVAudioDataSourceType QAVResult
- */
+@abstract      反注册音频数据类型的回调
+@discussion    要注册监听的音频数据源类型，具体参考QAVAudioDataSourceType。
+@param         type            要反注册监听的音频数据源类型，具体参考QAVAudioDataSourceType
+@return        成功返回QAV_OK, 其他情况请参照QAVResult。
+@see           QAVAudioDataSourceType QAVResult
+*/
 - (QAVResult)unregisterAudioDataCallback:(QAVAudioDataSourceType)type;
 
-        
+
 ```
 
 
@@ -214,12 +214,12 @@ EnableExternalCaptureCompleteCallback|指向App定义的回调函数
 
 ```java
 ILiveSDK.getInstance().getAvVideoCtrl().enableExternalCapture(false, true
-       new AVVideoCtrl.EnableExternalCaptureCompleteCallback(){
-                @Override
-                protected void onComplete(boolean enable, int result) {
-                    super.onComplete(enable, result);
-                }
-            });
+      new AVVideoCtrl.EnableExternalCaptureCompleteCallback(){
+@Override
+protected void onComplete(boolean enable, int result) {
+super.onComplete(enable, result);
+}
+});
 ```
 
 2、获取原始视频数据，加工处理
@@ -243,9 +243,9 @@ int|视频源类型。当前仅支持VIDEO_SRC_TYPE_CAMERA
 ```java
 // 图像需要旋转90度
 ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.length,
-    mCameraSize.width, mCameraSize.height, 270, AVVideoCtrl.COLOR_FORMAT_I420, AVView.VIDEO_SRC_TYPE_CAMERA);
+mCameraSize.width, mCameraSize.height, 270, AVVideoCtrl.COLOR_FORMAT_I420, AVView.VIDEO_SRC_TYPE_CAMERA);
 ```
- -----
+-----
 ### iOS
 自定义采集画面的用途主要用于预处理原始数据，比如用户需要人脸识别，画面美化，动效处理等，如下是通过自定义采集画面后，增加动效效果图，示例图：
 
@@ -272,8 +272,8 @@ ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.leng
 * 示例：
 
 ```
-    QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
-    [videoCtrl enableExternalCapture:YES];
+QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
+[videoCtrl enableExternalCapture:YES];
 ```
 
 3、自定义采集
@@ -301,8 +301,8 @@ ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.leng
 *示例：
 
 ```
-    QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
-    QAVResult result = [videoCtrl fillExternalCaptureFrame:frame];
+QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
+QAVResult result = [videoCtrl fillExternalCaptureFrame:frame];
 ```
 
 6、远端渲染
@@ -315,8 +315,10 @@ ILiveSDK.getInstance().getAvVideoCtrl().fillExternalCaptureFrame(data, data.leng
 |---|---|---|
 |QAVVideoFrame|frameData|AVSDK画面帧类型|
 
-7、注意事项
+8、注意事项
 > *1 如果渲染自定义采集的画面使用了OpenGL，则不能使用ILiveSDK中的渲染，否则会Crash。也就是说，此时界面上应该有两个view，一个渲染自定义采集的画面，另一个渲染QAVVideoFrame对象。
 
 > *2 转换成QAVVideoFrame时，属性color_format必需填写AVCOLOR_FORMAT_NV12
 srcType属性必须填写QAVVIDEO_SRC_TYPE_CAMERA
+
+> *3 自定义采集涉及数据格式转换，推荐使用libyuv库，[github地址](https://github.com/asynnestvedt/libyuv-ios)
