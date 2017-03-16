@@ -9,31 +9,26 @@
 ```
 ILivePushOption option = new ILivePushOption();
 option.channelName("新随心播推流");
-option.encode(TIMAvManager.StreamEncode.RTMP);
+option.encode(ILivePushOption.Encode.HLS);
 ```
 
 * 推流参数：ILivePushOption
 
 字段名|字段类型|默认值|说明
 :--:|:--:|:--:|:--:
-channelName|String|可选|设置频道名称
-channelDesc|String|可选|设置频道描述
-channelPassword|String|可选|设置频道播放密码
-record|boolean|NO|是否同时开启录制
-waterMark|boolean|NO|是否开启水印
-waterMarkId|long|可选|水印id
-sdkType|TIMAvManager.SDKType|可选（当前版本请选Normal）|设置当前sdk类型
-rateType|TIMAvManager.RateType|原始码率|支持的码率
-encode|TIMAvManager.StreamEncode|RTMP|设置推流编码类型
+channelName|String|可选|设置频道名称（仅在频道模式有效）
+channelDesc|String|可选|设置频道描述（仅在频道模式有效）
+recordFileType|RecordFileType|可选|直播码模式下的录制文件类型
+encode|ILivePushOption.Encode|可选|设置推流编码类型
 
 ######2. 开始旁路推流
 
 ```
-ILiveRoomManager.getInstance().startPushStream(option, new ILiveCallBack<TIMAvManager.StreamRes>() {
+ILiveRoomManager.getInstance().startPushStream(option, new ILiveCallBack<ILivePushRes>() {
         @Override
-        public void onSuccess(TIMAvManager.StreamRes data) {
+        public void onSuccess(ILivePushRes data) {
             //旁路推流成功
-            List<TIMAvManager.LiveUrl> liveUrls = data.getUrls();
+            List<ILivePushUrl> liveUrls = data.getUrls();
             streamChannelID = data.getChnlId();
         }
 
