@@ -309,7 +309,7 @@ QAVResult result = [videoCtrl fillExternalCaptureFrame:frame];
 
 |接口|描述|
 |---|---|
-|OnVideoPreview:|远程画面回调，接收远程帧数据，再使用ILiveSDK的渲染接口渲染，用户只需要添加一个渲染区域即可。渲染详情请参考[新版随心播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/tree/master/TILLiveSDKShow)|
+|OnVideoPreview:|远程画面回调，接收远程帧数据，再使用ILiveSDK的渲染接口渲染，用户只需要添加一个渲染区域即可。渲染详情请参考[新版随心播](https://github.com/zhaoyang21cn/ILiveSDK_iOS_Demos/tree/master)|
 
 |参数类型|参数名|说明|
 |---|---|---|
