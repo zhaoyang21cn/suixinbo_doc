@@ -16,7 +16,7 @@ ILiveSDK.getInstance().uploadLog(String desc, ILiveCallBack callback);
 
 ```
 
-### Android
+### IOS
 
 #### 接口定义
 
