@@ -64,6 +64,7 @@
 ### [在线人数](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/onlineMember.md)
 ### [功能定制](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/custom.md)
 ### [日志说明](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/log.md)
+### [日志上报](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/loguploader.md)
 ### [AVSDK1.8.4转置方案升级指引](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/AVSDK%201.8.4%E8%BD%AC%E7%BD%AE%E5%8A%9F%E8%83%BD%E5%8D%87%E7%BA%A7%E6%8C%87%E5%8D%97.md)
 
 
