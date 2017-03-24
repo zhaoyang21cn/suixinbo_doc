@@ -16,7 +16,25 @@ ILiveSDK.getInstance().uploadLog(String desc, ILiveCallBack callback);
 
 ```
 
+### Android
+
+#### 接口定义
+
+```
+[[ILiveSDK getInstance] logUpload:@"日志描述" uploadResult:^(int retCode, NSString *retMsg) {
+  if(retCode == ILLU_OK){
+    NSLog("上报成功");
+  }
+  else{
+    NSLog("上报失败");
+  }
+}];
+
+```
+
 #### 错误码定义
+0    ： 日志上报成功
+
 8101 ： 参数错误
 
 8102 ： 文件不存在
@@ -30,3 +48,5 @@ ILiveSDK.getInstance().uploadLog(String desc, ILiveCallBack callback);
 8106 ： 上传失败
 
 8107 ： 上报结果失败
+
+##注意##用户未登录也可调用上报日志接口，由于用户id有助于问题的定位，建议登录后上报 
