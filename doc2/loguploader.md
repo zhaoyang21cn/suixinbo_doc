@@ -21,7 +21,7 @@ ILiveSDK.getInstance().uploadLog(String desc, ILiveCallBack callback);
 #### 接口定义
 
 ```
-[[ILiveSDK getInstance] logUpload:@"日志描述" uploadResult:^(int retCode, NSString *retMsg) {
+[[ILiveSDK getInstance] uploadLog:@"日志描述" uploadResult:^(int retCode, NSString *retMsg) {
   if(retCode == ILLU_OK){
     NSLog("上报成功");
   }
