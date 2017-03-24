@@ -49,4 +49,5 @@ ILiveSDK.getInstance().uploadLog(String desc, ILiveCallBack callback);
 
 8107 ： 上报结果失败
 
-##注意##用户未登录也可调用上报日志接口，由于用户id有助于问题的定位，建议登录后上报 
+#### 注意
+用户未登录也可调用上报日志接口，由于用户id有助于问题的定位，建议登录后上报 
