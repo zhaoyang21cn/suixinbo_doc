@@ -66,6 +66,8 @@
 ### [日志说明](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/log.md)
 ### [日志上报](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/loguploader.md)
 ### [AVSDK1.8.4转置方案升级指引](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/AVSDK%201.8.4%E8%BD%AC%E7%BD%AE%E5%8A%9F%E8%83%BD%E5%8D%87%E7%BA%A7%E6%8C%87%E5%8D%97.md)
+### [新老随心播信令兼容](https://github.com/zhaoyang21cn/suixinbo_doc/blob/master/doc2/%E6%96%B0%E8%80%81%E9%9A%8F%E5%BF%83%E6%92%AD%E4%BF%A1%E4%BB%A4%E5%85%BC%E5%AE%B9%E6%96%87%E6%A1%A3.md)
+
 
 
 ##运营相关
