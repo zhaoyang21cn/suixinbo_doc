@@ -85,6 +85,7 @@ Frameworks目录
 |CoreGraphics.framework|
 |CoreTelephony.framework|
 |SystemConfiguration.framework|
+|AssetsLibrary.framework(ILiveSDK1.4.0，QAVSDK1.9.0之后的包需要添加)|
 
 ## 五 库类介绍
 -----
