@@ -322,5 +322,6 @@ QAVResult result = [videoCtrl fillExternalCaptureFrame:frame];
 srcType属性必须填写QAVVIDEO_SRC_TYPE_CAMERA
 
 > *3 自定义采集涉及数据格式转换，推荐使用libyuv库，[github地址](https://github.com/asynnestvedt/libyuv-ios)
+
 > *4 如果QAVSDK版本是1.8.2或之前的版本，需要改一下QAVCommon.h文件中的值：avColorFormats枚举下的AVCOLOR_FORMAT_NV12=3
 AVCOLOR_FORMAT_NV12
