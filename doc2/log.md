@@ -33,6 +33,14 @@ iLiveSDK|程序运行目录/ilivesdk_YYYMMDD.log
 IMSDK|程序运行目录/imsdk_YYYMMDD.log
 AVSDK|程序运行目录/QAVSDK_YYYMMDD.log
 
+### Web
+
+SDK|目录
+:--:|:--:
+iLiveSDK|%appdata%/Tencent/iLiveSDK/ilivesdk_YYYMMDD.log(在开始菜单的运行中执行%appdata%可打开appdata目录)
+IMSDK|%appdata%/Tencent/iLiveSDK/imsdk_YYYMMDD.log
+AVSDK|%appdata%/Tencent/iLiveSDK/QAVSDK_YYYMMDD.log
+
 
 ## iLive SDK 关键路径的LOG
 
@@ -289,3 +297,5 @@ Key_Procedure|iLiveLoginMgr|iLiveLogout()
 Key_Procedure|iLiveSDK|destroy()
 ```
 
+### PC
+与PC端一致
