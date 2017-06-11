@@ -297,5 +297,5 @@ Key_Procedure|iLiveLoginMgr|iLiveLogout()
 Key_Procedure|iLiveSDK|destroy()
 ```
 
-### PC
+### WEB
 与PC端一致
