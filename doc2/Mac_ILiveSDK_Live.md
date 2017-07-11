@@ -96,7 +96,8 @@ option.memberStatusListener = self;     //房间内用户的事件回调
 __weak typeof(self) ws = self;
 [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
     NSLog(@"创建房间成功");
-    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
+    //如果要设置麦克风音量，则需要设置下面两个代理，详细实现参照demo的LiveWindowController+Audio.m文件
+    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
     [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_NetStream];
 } failed:^(NSString *module, int errId, NSString *errMsg) {
     NSLog(@"创建房间失败,module=%@,code=%d,msg=%@",module,errId,errMsg);
