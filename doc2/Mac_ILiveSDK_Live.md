@@ -39,9 +39,9 @@
 ＊示例：
 ```
 [[ILiveLoginManager getInstance] tlsLogin:@"这里是帐号id" pwd:@"这里是登录密码" succ:^{
-NSLog(@"登录成功");
+    NSLog(@"登录成功");
 } failed:^(NSString *moudle, int errId, NSString *errMsg) {
-NSLog(@"登录失败");
+    NSLog(@"登录失败");
 }];
 ```
 
@@ -62,9 +62,9 @@ NSLog(@"登录失败");
 *示例:
 ```
 [[ILiveLoginManager getInstance] iLiveLogin:@"这里是帐号id" sig:@"这里是签名字符串" succ:^{
-NSLog(@"登录成功");
+    NSLog(@"登录成功");
 } failed:^(NSString *moudle, int errId, NSString *errMsg) {
-NSLog(@"登录失败");
+    NSLog(@"登录失败");
 }];
 ```
 
@@ -95,12 +95,12 @@ option.roomDisconnectListener = self;   //房间失去连接的回调通知
 option.memberStatusListener = self;     //房间内用户的事件回调
 __weak typeof(self) ws = self;
 [[ILiveRoomManager getInstance] createRoom:(int)_item.info.roomnum option:option succ:^{
-NSLog(@"创建房间成功");
-[[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
-[[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_NetStream];
+    NSLog(@"创建房间成功");
+    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
+    [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_NetStream];
 
 } failed:^(NSString *module, int errId, NSString *errMsg) {
-NSLog(@"创建房间失败,module=%@,code=%d,msg=%@",module,errId,errMsg);
+    NSLog(@"创建房间失败,module=%@,code=%d,msg=%@",module,errId,errMsg);
 }];
 ```
 
@@ -125,10 +125,9 @@ ILiveRoomOption *option = [ILiveRoomOption defaultGuestLiveOption];
 option.controlRole = _item.info.roleName;
 option.memberStatusListener = self;
 [[ILiveRoomManager getInstance] joinRoom:(int)_item.info.roomnum option:option succ:^{
-NSLog(@"加入房间成功");
-
+    NSLog(@"加入房间成功");
 } failed:^(NSString *module, int errId, NSString *errMsg) {
-NSLog(@"加入房间失败.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
+    NSLog(@"加入房间失败.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
 }];
 ```
 
