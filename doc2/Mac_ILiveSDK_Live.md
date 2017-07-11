@@ -98,7 +98,6 @@ __weak typeof(self) ws = self;
     NSLog(@"创建房间成功");
     [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_VoiceDispose];
     [[[ILiveSDK getInstance] getAVContext].audioCtrl registerAudioDataCallback:QAVAudioDataSource_NetStream];
-
 } failed:^(NSString *module, int errId, NSString *errMsg) {
     NSLog(@"创建房间失败,module=%@,code=%d,msg=%@",module,errId,errMsg);
 }];
