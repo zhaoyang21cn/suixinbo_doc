@@ -26,9 +26,9 @@ Frameworks目录
 ## 三 运行
 编译运行工程。(如果xcode8编译不过，修改 Bundle Identifier, 随心播工程上的Bundle Identifier在用户真机上可能无法运行，用户重新修改下Bundle Identifier即可，比如在原有id后面加1)
 
-* <div align=center>
+* <div align=right>
 <img src="https://mc.qcloudimg.com/static/img/1be6185cdb0f61756c85e230a9fc0514/2.png"/>
-* <div align=center>
+* <div>
 <img src="https://mc.qcloudimg.com/static/img/ccf7ca496a22ec0aed9d4446f30ba85f/1.png"/>
 
 ## 四 集成到开发者自己的代码工程里
