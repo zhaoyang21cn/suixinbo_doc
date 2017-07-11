@@ -49,19 +49,7 @@ Frameworks目录
 ![](http://mc.qcloudimg.com/static/img/e7b7897cb79a5cb9a984938dd4b3fda3/image.png)
 若上述步骤均无误，则工程编译可以通过了。
 
-### 3 修改后台地址
-目前随心播后台主要用来维护直播房间列表。如果复用随心播客户端代码，需要修改随心播后台地址为业务方自己部署的服务器地址。 <br />     
-
-| 请求类| 说明 | 修改文件 | 修改方法 |
-|---------|---------|---------|---------|
-| LiveAVRoomIDRequest | 获取自己分配的房间号 |LiveAVRoomIDRequest.m|- (NSString *)url |
-| LiveStartRequest | 创建新房间 |LiveStartRequest.m|- (NSString *)url |
-| LiveEndRequest | 退出房间 |LiveEndRequest.m|- (NSString *)url |
-| LiveListRequest | 获取房间列表 |LiveListRequest.m| - (NSString *)url |
-| LiveHostHeartBeatRequest | 房间心跳 |LiveHostHeartBeatRequest.m|- (NSString *)url |
-| LiveImageSignRequest | 图片上传相关 |LiveImageSignRequest.m|- (NSString *)url |
-
-### 4 添加系统库
+### 3 添加系统库
 添加以下系统库比较方便的方法是直接从随心播工程中，将SystemLibrarys组拖到自己的工程目录下
 
 |  需要增加的系统库 |
