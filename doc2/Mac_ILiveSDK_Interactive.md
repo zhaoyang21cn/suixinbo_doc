@@ -73,7 +73,7 @@ NSDictionary *sendDic = [NSDictionary dictionaryWithObjectsAndKeys:@(AVIMCMD_Mul
 NSData *sendData = [NSJSONSerialization dataWithJSONObject:sendDic options:NSJSONWritingPrettyPrinted error:&error];
 if(error != nil){
     NSLog(@"serialization msg fail");
-   return;
+    return;
 }
 TIMCustomElem *imCustomElem = [[TIMCustomElem alloc] init];
 [imCustomElem setData:sendData];
