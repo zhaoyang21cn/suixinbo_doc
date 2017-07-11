@@ -35,9 +35,9 @@ TIMMessage *msg = [[TIMMessage alloc] init];
 
 __weak typeof(self) ws = self;
 [[ILiveRoomManager getInstance] sendOnlineGroupMessage:msg succ:^{
-  NSLog(@"send msg  succ");
+    NSLog(@"send msg  succ");
 } failed:^(NSString *module, int errId, NSString *errMsg) {
-  NSLog(@"send msg fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
+    NSLog(@"send msg fail.M=%@,errId=%d,errMsg=%@",module,errId,errMsg);
 }];
 ```
 
@@ -45,8 +45,8 @@ __weak typeof(self) ws = self;
 // 2. 消息接收（所有的IM消息都在onNewMessage:中回调）
 - (void)onNewMessage:(NSArray *)msgs
 {
-  //如果没有addMessageListener添加监听对象，则不会收到onNewMessage回调
-  NSLog(@"收到消息，在这里解析消息，详细解析步骤，可参考demo程序");
+    //如果没有addMessageListener添加监听对象，则不会收到onNewMessage回调
+    NSLog(@"收到消息，在这里解析消息，详细解析步骤，可参考demo程序");
 }
 ```
 
@@ -72,8 +72,8 @@ NSError *error;
 NSDictionary *sendDic = [NSDictionary dictionaryWithObjectsAndKeys:@(AVIMCMD_Multi_Host_Invite), kMsgCmdKey, dataStr, kMsgDataKey,nil];
 NSData *sendData = [NSJSONSerialization dataWithJSONObject:sendDic options:NSJSONWritingPrettyPrinted error:&error];
 if(error != nil){
-  NSLog(@"serialization msg fail");
-  return;
+    NSLog(@"serialization msg fail");
+   return;
 }
 TIMCustomElem *imCustomElem = [[TIMCustomElem alloc] init];
 [imCustomElem setData:sendData];
@@ -82,9 +82,9 @@ TIMMessage *imMessage = [[TIMMessage alloc] init];
 __weak typeof(self) ws = self;
 
 [[ILiveRoomManager getInstance] sendOnlineC2CMessage:recvId message:imMessage succ:^{
-  NSLog(@"发送连麦消息邀请成功");
+    NSLog(@"发送连麦消息邀请成功");
 } failed:^(NSString *module, int errId, NSString *errMsg) {
-  NSLog(@"发送连麦邀请失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
+    NSLog(@"发送连麦邀请失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
 }];
 ```
 ##### 2.3.2 上麦接口
@@ -92,28 +92,28 @@ __weak typeof(self) ws = self;
 ```
 - (void)onNewMessage:(NSArray *)msgs
 {
-  //收到消息，解析，判断是否为邀请上麦消息，如果是做上麦操作，解析方法详见demo
-  ...
-  //上麦步骤：修改角色->打开相机->打开Mic
-  __weak typeof(self) ws = self;
-  ILiveRoomManager *manager = [ILiveRoomManager getInstance];
-  //kSxbRole_InteractHD是demo的角色名，开发者需要改成自己的appid在控制台配置的角色名
-  [manager changeRole:kSxbRole_InteractHD succ:^ {
-    NSLog(@"上麦:改变角色成功");
-    [manager enableCamera:CameraPosFront enable:YES succ:^{
-       NSLog(@"上麦:打开摄像头成功");
-      [manager enableMic:YES succ:^{
-        NSLog(@"上麦:打开麦克风成功");
-        NSLog(@"上麦:上麦成功");
-      } failed:^(NSString *module, int errId, NSString *errMsg) {
-        NSLog(@"上麦:打开麦克风失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
-      }];
+    //收到消息，解析，判断是否为邀请上麦消息，如果是做上麦操作，解析方法详见demo
+    ...
+    //上麦步骤：修改角色->打开相机->打开Mic
+    __weak typeof(self) ws = self;
+    ILiveRoomManager *manager = [ILiveRoomManager getInstance];
+    //kSxbRole_InteractHD是demo的角色名，开发者需要改成自己的appid在控制台配置的角色名
+    [manager changeRole:kSxbRole_InteractHD succ:^ {
+        NSLog(@"上麦:改变角色成功");
+        [manager enableCamera:CameraPosFront enable:YES succ:^{
+            NSLog(@"上麦:打开摄像头成功");
+            [manager enableMic:YES succ:^{
+                NSLog(@"上麦:打开麦克风成功");
+                NSLog(@"上麦:上麦成功");
+            } failed:^(NSString *module, int errId, NSString *errMsg) {
+                NSLog(@"上麦:打开麦克风失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
+            }];
+         } failed:^(NSString *module, int errId, NSString *errMsg) {
+             NSLog(@"上麦:打开摄像头失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
+         }];
     } failed:^(NSString *module, int errId, NSString *errMsg) {
-      NSLog(@"上麦:打开摄像头失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
+       NSLog(@"上麦:切换角色失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
     }];
-  } failed:^(NSString *module, int errId, NSString *errMsg) {
-    NSLog(@"上麦:切换角色失败,M=%@,code=%d,Msg=%@",module,errId,errMsg);
-  }];
 }
 ```
 ##### 2.3.3 设置上麦者渲染画面的区域接口
@@ -131,22 +131,22 @@ __weak typeof(self) ws = self;
 ```
 - (BOOL)onEndpointsUpdateInfo:(QAVUpdateEvent)event updateList:(NSArray *)endpoints
 {
-  TILLiveManager *manager = [TILLiveManager getInstance];
-  switch (event) 
-  {
-    case ILVLIVE_AVEVENT_CAMERA_ON:
+    TILLiveManager *manager = [TILLiveManager getInstance];
+    switch (event) 
     {
-      for (NSString *user in users) 
-      {
-        //user:事件对应的用户id
-        ILiveFrameDispatcher *frameDispatcher = [[ILiveRoomManager getInstance] getFrameDispatcher];
-        ILiveRenderViewForMac *view = [frameDispatcher addRenderAt:NSMakeRect(0, 0, 640, 480) forIdentifier:user    srcType:QAVVIDEO_SRC_TYPE_CAMERA];
-        [self.window.contentView addSubview:view];
-      }	
+        case ILVLIVE_AVEVENT_CAMERA_ON:
+        {
+           for (NSString *user in users) 
+            {
+                //user:事件对应的用户id
+                ILiveFrameDispatcher *frameDispatcher = [[ILiveRoomManager getInstance] getFrameDispatcher];
+                ILiveRenderViewForMac *view = [frameDispatcher addRenderAt:NSMakeRect(0, 0, 640, 480) forIdentifier:user    srcType:QAVVIDEO_SRC_TYPE_CAMERA];
+                [self.window.contentView addSubview:view];
+            }	
+        }
+        break;
     }
-    break;
-  }
-  return YES;
+    return YES;
 }
 ```
 若上述步骤均无误，则可以实现主播邀请观众连麦，观众成功上麦，直播间中出现多路画面(主播和互动观众的)。
