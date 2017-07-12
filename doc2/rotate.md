@@ -6,7 +6,8 @@
 
 ### 方案选择
 
-从1.2.0版本起，iLiveSDK已经封装了常见显示方案，开发者只需按自己的业务需要选择即可。
+从1.2.0版本起，iLiveSDK支持自动旋转。
+从1.5.1版本起，iLiveSDK支持手动旋转。
 
 参数列表
 
@@ -22,11 +23,14 @@ IOS SDK
 
 参数名/函数名  |说明  |默认值  
 :-----: | :-----: | :-----: 
-isRotate  |主播画面是否旋转  |YES（旋转）   
+autoRotate  |是否启用自动旋转  |YES
+rotateAngle  |顺时针旋转角度（手动旋转模式有效）  |YES
+isRotate  |主播画面是否旋转（自动旋转模式有效）  |YES（旋转画面）NO（画面始终为正）   
 sameDirectionRenderMode  |方向一致渲染模式  |ILIVERENDERMODE_SCALEASPECTFILL（全屏适应）   
 diffDirectionRenderMode  |方向不一致渲染模式  |ILIVERENDERMODE_SCALEASPECTFIT（黑边） 
 
-#### 方案一 旋转主播画面
+#### 自动旋转模式
+##### 方案一 旋转主播画面
 
 效果如下：
 
@@ -55,7 +59,7 @@ iLiveRenderView.isRotate = YES;
 iLiveRenderView.sameDirectionRenderMode = ILiveRenderMode;
 ```
 
-#### 方案二 不旋转主播画面
+##### 方案二 不旋转主播画面
 
 效果如下：
 
@@ -88,7 +92,19 @@ iLiveRenderView.diffDirectionRenderMode = ILiveRenderMode;
 iLiveRenderView.sameDirectionRenderMode = ILiveRenderMode;
 ```
 
+#### 手动旋转模式
 
+手动旋转模式下，画面方向为原始画面方向，只有在设置旋转角度后画面才会旋转。
 
+IOS SDK接口：
 
-
+```Object-C
+//启用手动旋转模式
+iLiveRenderView.autoRotate = NO;
+//设置旋转角度
+iLiveRenderView.rotateAngle = ILIVEROTATION_0;
+//设定在方向不一致情况下，是铺满屏幕还是留黑边
+iLiveRenderView.diffDirectionRenderMode = ILiveRenderMode;
+//设定在方向一致情况下，是铺满屏幕还是留黑边
+iLiveRenderView.sameDirectionRenderMode = ILiveRenderMode;
+```
