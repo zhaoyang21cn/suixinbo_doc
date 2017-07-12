@@ -16,10 +16,10 @@
 效果图如下：
 
 * <div align=center>
-<img src="http://mc.qcloudimg.com/static/img/259d05d27ffb3be35f2c739a9265397a/image.png"/>
+<img src="http://mc.qcloudimg.com/static/img/2b146c664a2d0d74f3a57a79d8c06a2b/image.png"/>
 
 * <div align=center>
-<img src="http://mc.qcloudimg.com/static/img/a577ed2f15fb5fa3247f54c0c0ee301e/image.png"/>
+<img src="http://mc.qcloudimg.com/static/img/d34af5a50720dca145728112d2195522/image.png"/>
 
 ## 四 集成到开发者自己的代码工程里
 ### 1 引入SDK并导入项目 
