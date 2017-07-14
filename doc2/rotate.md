@@ -108,3 +108,12 @@ iLiveRenderView.diffDirectionRenderMode = ILiveRenderMode;
 //设定在方向一致情况下，是铺满屏幕还是留黑边
 iLiveRenderView.sameDirectionRenderMode = ILiveRenderMode;
 ```
+
+Android SDK接口
+
+```
+// 启用手动旋转模式
+avRootView.setAutoOrientation(false);
+// 对每一路视频AVVideoView可以设置旋转角度
+avVideoView.setRotation(90);
+```
