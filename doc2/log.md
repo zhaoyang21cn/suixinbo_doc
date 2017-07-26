@@ -29,9 +29,9 @@ AVSDK|Library/Caches/QAVSDK_YYYMMDD.log
 
 SDK|目录
 :--:|:--:
-iLiveSDK|程序运行目录/ilivesdk_YYYMMDD.log
-IMSDK|程序运行目录/imsdk_YYYMMDD.log
-AVSDK|程序运行目录/QAVSDK_YYYMMDD.log
+iLiveSDK|程序运行目录/txsdklog/ilivesdk_YYYMMDD.log
+IMSDK|程序运行目录/txsdklog/imsdk_YYYMMDD.log
+AVSDK|程序运行目录/txsdklog/QAVSDK_YYYMMDD.log
 
 ### Web
 
@@ -229,25 +229,26 @@ ILiveRoom:Key_Procedure|quitIMGroup|succ
 ### PC
 #### 创建房间流程正确LOG如下
 
-![创建房间](https://mc.qcloudimg.com/static/img/8576883ef0ae442bd713654d41c9ab17/createRoom.jpg)
+![创建房间](https://mc.qcloudimg.com/static/img/0c6fdd58abeadb5250685e56d0192b3d/1.png)
 
 * 具体包括以下几个步骤
 
 ```C
 1. 设置各个回调接口
-Key_Procedure|iLiveSDK|SetMessageCallBack() //设置接收消息回调
-Key_Procedure|iLiveSDK|SetForceOfflineCallback()    //设置被踢下线的回调
-Key_Procedure|iLiveRoomMgr|setLocalVideoCallBack()  //设置本地视频处理函数
-Key_Procedure|iLiveRoomMgr|setRemoteVideoCallBack() //设置远程视频处理函数
+Key_Procedure|iLiveRoomMgr|setMessageCallBack()         //设置接收消息回调
+Key_Procedure|iLiveLoginMgr|setForceOfflineCallback()   //设置被踢下线的回调
+Key_Procedure|iLiveRoomMgr|setLocalVideoCallBack()      //设置本地视频处理函数
+Key_Procedure|iLiveRoomMgr|setRemoteVideoCallBack()     //设置远程视频处理函数 
+Key_Procedure|iLiveRoomMgr|setDeviceOperationCallback() //设置设备操作回调
 
 2. 初始化SDK
-Key_Procedure|iLiveSDK|initSdk(). appid: 1400019352 accoutType: 8970
+Key_Procedure|iLiveSDK|initSdk(). version: 1.5.0.0 appid: 1400027849 accoutType: 11656
 
 3. 登录
-Key_Procedure|iLiveLoginMgr|iLiveLogin()
+Key_Procedure|iLiveLoginMgr|iLiveLogin() succeed. userId: yjp
 
 4. 创建直播间
-Key_Procedure|iLiveRoomMgr|createRoom(). roomid: 10011
+Key_Procedure|iLiveRoomMgr|createRoom(). roomid: 51544
 
 5. 打开摄像头
 Key_Procedure|iLiveRoomMgr|openCamera(\\摄像头id)
@@ -264,28 +265,29 @@ Key_Procedure|iLiveSDK|destroy()
 
 #### 加入房间流程正确LOG如下
 
-![加入房间](https://mc.qcloudimg.com/static/img/12698e71a0a83fa99b5b128a9d5d3928/joinRoom.jpg)
+![加入房间](https://mc.qcloudimg.com/static/img/1a4cfb66f38094baf7d0b72824512603/2.png)
 
 * 具体包括以下几个步骤
 
 ```C
 1. 设置各个回调接口
-Key_Procedure|iLiveSDK|SetMessageCallBack() //设置接收消息回调
-Key_Procedure|iLiveSDK|SetForceOfflineCallback()    //设置被踢下线的回调
-Key_Procedure|iLiveRoomMgr|setLocalVideoCallBack()  //设置本地视频处理函数
-Key_Procedure|iLiveRoomMgr|setRemoteVideoCallBack() //设置远程视频处理函数
+Key_Procedure|iLiveRoomMgr|setMessageCallBack()         //设置接收消息回调
+Key_Procedure|iLiveLoginMgr|setForceOfflineCallback()   //设置被踢下线的回调
+Key_Procedure|iLiveRoomMgr|setLocalVideoCallBack()      //设置本地视频处理函数
+Key_Procedure|iLiveRoomMgr|setRemoteVideoCallBack()     //设置远程视频处理函数 
+Key_Procedure|iLiveRoomMgr|setDeviceOperationCallback() //设置设备操作回调
 
 2. 初始化SDK
-Key_Procedure|iLiveSDK|initSdk(). appid: 1400019352 accoutType: 8970
+Key_Procedure|iLiveSDK|initSdk(). version: 1.5.0.0 appid: 1400027849 accoutType: 11656
 
 3. 登录
-Key_Procedure|iLiveLoginMgr|iLiveLogin()
+Key_Procedure|iLiveLoginMgr|iLiveLogin() succeed. userId: yjp
 
 4. 加入直播间
-Key_Procedure|iLiveRoomMgr|joinRoom(). roomid: 10014
+Key_Procedure|iLiveRoomMgr|joinRoom(). roomid: 51552
 
 5. 请求画面
-Key_Procedure|iLiveRoomMgr|requestViewList()
+Key_Procedure|iLiveRoomMgr|requestViewList(yjp1)
 
 6. 退出直播间
 Key_Procedure|iLiveRoomMgr|quitRoom()
