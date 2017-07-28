@@ -19,7 +19,7 @@
 <img src="http://mc.qcloudimg.com/static/img/2b146c664a2d0d74f3a57a79d8c06a2b/image.png"/>
 
 * <div align=center>
-<img src="http://mc.qcloudimg.com/static/img/d34af5a50720dca145728112d2195522/image.png"/>
+<img src="http://mc.qcloudimg.com/static/img/78c79cd3a3872c3e274ae1982f4671f6/image.png"/>
 
 ## 四 集成到开发者自己的代码工程里
 ### 1 引入SDK并导入项目 
