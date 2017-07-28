@@ -22,31 +22,7 @@
 
 # 2 帐号登录
 
-## 2.1 托管模式
-托管模式：用户帐号系统托管到腾讯云。[ 详情](https://www.qcloud.com/doc/product/269/1509)
-
-|接口名|接口描述|
-|---|---|
-|tlsLogin: pwd: succ: failed:|托管模式登录到腾讯云后台|
-
-|参数类型|参数名|说明|
-|---|---|---|
-|NSString|uid|用户在托管模式下注册的帐号|
-|NSString|pwd|用户在托管模式下注册帐号的密码|
-|TCIVoidBlock|succ|登录成功回调|
-|TCIErrorBlock|failed|登录失败回调|
-
-＊示例：
-```
-[[ILiveLoginManager getInstance] tlsLogin:@"这里是帐号id" pwd:@"这里是登录密码" succ:^{
-    NSLog(@"登录成功");
-} failed:^(NSString *moudle, int errId, NSString *errMsg) {
-    NSLog(@"登录失败");
-}];
-```
-
-## 2.2 独立模式
-独立模式：用户帐号系统由用户自己的服务器维护。独立模式需要业务后台生成Sig，客户端拿到这个Sig再登录腾讯云后台。[详情](https://www.qcloud.com/doc/product/269/1508)
+用户帐号系统由用户自己的服务器维护。需要用户自己的业务后台生成Sig，客户端拿到这个Sig再登录腾讯云后台。[详情](https://www.qcloud.com/doc/product/269/1508)
 
 |接口名|接口描述|
 |---|---|
