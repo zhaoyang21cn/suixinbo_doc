@@ -263,17 +263,18 @@ mCameraSize.width, mCameraSize.height, 270, AVVideoCtrl.COLOR_FORMAT_I420, AVVie
 
 |接口|描述|
 |---|---|
-|enableExternalCapture:|打开(关闭)外部视频捕获设备,自定义采集时，需要打开.返回QAV_OK表示执行成功。用了此方法之后，***不能***再调用ILiveSDK的打开摄像头接口，且ILiveSDK的美白，美颜将失效|
+|enableExternalCapture:shouldRender:|打开(关闭)外部视频捕获设备,自定义采集时，需要打开.返回QAV_OK表示执行成功。用了此方法之后，***不能***再调用ILiveSDK的打开摄像头接口，且ILiveSDK的美白，美颜将失效|
 
 |参数类型|参数名|说明|
 |---|---|---|
 |BOOL|isEnableExternalCapture|是否打开外部视频捕获设备，自定义采集时传YES|
+|BOOL|shouldRender|SDK是否渲染输入流视频数据，YES表示会，NO表示不会|
 
 * 示例：
 
 ```
-QAVVideoCtrl *videoCtrl = [[ILiveSDK getInstance] getAvVideoCtrl].videoCtrl;
-[videoCtrl enableExternalCapture:YES];
+	QAVContext *context = [[ILiveSDK getInstance] getAVContext];
+	[context.videoCtrl enableExternalCapture:YES shouldRender:NO];
 ```
 
 3、自定义采集
