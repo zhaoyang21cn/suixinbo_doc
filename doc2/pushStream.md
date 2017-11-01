@@ -74,6 +74,7 @@ ILivePushOption *option = [[ILivePushOption alloc] init];
 option.channelInfo = info;
 option.encodeType = encodeType;
 option.recrodFileType = recordType;
+option.recordId = 123456;
 ```
 * 推流参数：ILivePushOption
 
@@ -82,6 +83,8 @@ option.recrodFileType = recordType;
 channelInfo|ChannelInfo|必填|旁路直播频道信息
 encodeType|AVEncodeType|必填|编码格式
 encodeType|AVRecordFileType|必填|录制文件类型(AV_RECORD_FILE_TYPE_NONE则不录制文件)
+pushSvrType|ILivePushSvrType|选填|推流服务器类型(当前版本使用默认值)
+recordId|uint32_t|选填|手动推流自动录制时，如果需要后台识别特定的录制文件，用户可以通过这个字段做区分。(使用这个字段时，控制台的“自动旁路直播”开关必须关闭才生效)
 
 
 * 频道参数：ChannelInfo
