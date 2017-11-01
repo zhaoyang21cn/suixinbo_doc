@@ -10,6 +10,7 @@
 ILivePushOption option = new ILivePushOption();
 option.channelName("新随心播推流");
 option.encode(ILivePushOption.Encode.HLS);
+option.recordId = 123456;
 ```
 
 * 推流参数：ILivePushOption
@@ -20,6 +21,8 @@ channelName|String|可选|设置频道名称（仅在频道模式有效）
 channelDesc|String|可选|设置频道描述（仅在频道模式有效）
 recordFileType|RecordFileType|可选|直播码模式下的录制文件类型
 encode|ILivePushOption.Encode|可选|设置推流编码类型
+pushSvrType|PushEnv|选填|推流服务器类型(当前版本使用默认值)
+recordId|uint32_t|选填|手动推流自动录制时，如果需要后台识别特定的录制文件，用户可以通过这个字段做区分。(使用这个字段时，控制台的“自动旁路直播”开关必须关闭才生效)
 
 ######2. 开始旁路推流
 
